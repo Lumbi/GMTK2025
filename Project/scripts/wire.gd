@@ -59,8 +59,13 @@ func _ready() -> void:
 
 # remove physics
 func freeze() -> void:
+	await get_tree().create_timer(1).timeout
 	for segment in segments:
 		segment.set_deferred("freeze", true)
+
+func unfreeze() -> void:
+	for segment in segments:
+		segment.set_deferred("freeze", false)
 
 func _process(_delta: float) -> void:
 	queue_redraw()

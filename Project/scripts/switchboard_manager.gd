@@ -63,11 +63,13 @@ func on_socket_disconected(socket: Node) -> void:
 		var wire = last_wire_pair["wire"]
 		current_wire.queue_free()
 		current_wire = wire
-	var previous_node = switchboard_scoekt_active_nodes.back()
-	if previous_node:
-		active_socketid = previous_node["socket"].socketid
-	else:
-		active_socketid = -1
+		wire.unfreeze()
+	if !switchboard_scoekt_active_nodes.is_empty(): 
+		var previous_node = switchboard_scoekt_active_nodes.back()
+		if previous_node:
+			active_socketid = previous_node["socket"].socketid
+		else:
+			active_socketid = -1
 
 func spawn_wire(position: Vector2) -> void:
 	if not current_wire:
@@ -80,13 +82,11 @@ func _on_socket_input_button_down(socket: Node):
 		on_socket_connected(socket)
 		socket.swap_to_connected_socket()
 		active_socketid = socket.socketid
-		print("Socket ", socket.socketid, " input button pressed!")
 
 func _on_socket_output_button_down(socket: Node):
 	if active_socketid == socket.socketid:
 		on_socket_disconected(socket)
 		socket.swap_to_unconnected_socket()
-		print("Socket ", socket.socketid, " output button pressed!")
 
 func is_already_connected(scoket : Node):
 	for socket_wire_pair in switchboard_scoekt_active_nodes:
