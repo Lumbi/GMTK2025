@@ -57,7 +57,7 @@ func _ready() -> void:
 	start_pin_joint.node_b = first_segment.get_path()
 	end_pin_joint.node_a = last_segment.get_path()
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	queue_redraw()
 
 func _draw() -> void:
