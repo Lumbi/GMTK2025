@@ -2,9 +2,11 @@ extends Node2D
 
 var wire_segment_prefab = preload("res://prefabs/WireSegment.tscn")
 
-var segment_pair_count = 10
+var segment_pair_count = 6
 var spacing = 20
 var segments = []
+const DRAW_COLOR = Color.GREEN
+const DRAW_WIDTH = 10
 
 func move_end_to(p: Vector2):
 	var end_pin = $"EndPinStaticBody"
@@ -66,5 +68,6 @@ func _draw() -> void:
 	var end_pos
 	for segment in segments:
 		end_pos = segment.position
-		draw_line(start_pos, end_pos, Color.GREEN, 10)
+		draw_line(start_pos, end_pos, DRAW_COLOR, DRAW_WIDTH)
 		start_pos = end_pos
+	draw_line(start_pos, end_pin.position, DRAW_COLOR, DRAW_WIDTH)
