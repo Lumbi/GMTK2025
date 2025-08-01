@@ -41,7 +41,7 @@ func spawn_switchboard_grid():
 			socket_instance.name = "SwitchboardSocket_" + str(row) + "_" + str(col)
 			switchboard_socket_nodes.append(socket_instance)
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	# move the current wire's end to mouse position
 	if current_wire:
 		var mouse_pos = get_viewport().get_mouse_position()
@@ -57,7 +57,7 @@ func on_socket_connected(socket: Node) -> void:
 		current_wire = null
 		spawn_wire(output_socket.global_position)
 
-func on_socket_disconected(socket: Node) -> void:
+func on_socket_disconected(_socket: Node) -> void:
 	var last_wire_pair = switchboard_scoekt_active_nodes.pop_back() #previous wire 
 	if last_wire_pair != null:
 		var wire = last_wire_pair["wire"]
@@ -71,10 +71,10 @@ func on_socket_disconected(socket: Node) -> void:
 		else:
 			active_socketid = -1
 
-func spawn_wire(position: Vector2) -> void:
+func spawn_wire(spawn_position: Vector2) -> void:
 	if not current_wire:
 		current_wire = wire_prefab.instantiate()
-		current_wire.global_position = position
+		current_wire.global_position = spawn_position
 		add_child(current_wire)
 
 func _on_socket_input_button_down(socket: Node):
@@ -91,7 +91,6 @@ func _on_socket_output_button_down(socket: Node):
 func is_already_connected(scoket : Node):
 	for socket_wire_pair in switchboard_scoekt_active_nodes:
 		var previous_socket = socket_wire_pair["socket"]
-		var wire = socket_wire_pair["wire"]
 		if scoket == previous_socket:
 			return true
 	return false

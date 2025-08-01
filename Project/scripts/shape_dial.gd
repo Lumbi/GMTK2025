@@ -41,6 +41,6 @@ func get_dial_code() -> String:
 		result += "SQ"
 	return result
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	$DebugLabel.text = get_dial_code()
 	pass
