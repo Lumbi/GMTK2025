@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://beryfgbw458pm"]
+
+[ext_resource type="Texture2D" uid="uid://n6uytn2aufxy" path="res://textures/socket.png" id="1_b6yfp"]
+[ext_resource type="Script" uid="uid://bipeecklpi6pw" path="res://scripts/switchboard_socket.gd" id="1_cp8un"]
+
+[node name="SwitchboardSocket" type="Node2D"]
+script = ExtResource("1_cp8un")
+
+[node name="Socket" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_b6yfp")
+
+[node name="Button" type="Button" parent="Socket"]
+anchors_preset = -1
+anchor_right = 1.02
+anchor_bottom = 1.02
+offset_left = -50.0
+offset_top = -50.0
+offset_right = -50.0
+offset_bottom = -50.0
+flat = true
+
+[connection signal="mouse_entered" from="Socket/Button" to="." method="_on_button_mouse_entered"]
+[connection signal="mouse_exited" from="Socket/Button" to="." method="_on_button_mouse_exited"]
