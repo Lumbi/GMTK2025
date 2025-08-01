@@ -1,16 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://beryfgbw458pm"]
+[gd_scene load_steps=4 format=3 uid="uid://beryfgbw458pm"]
 
-[ext_resource type="Texture2D" uid="uid://n6uytn2aufxy" path="res://textures/socket.png" id="1_b6yfp"]
 [ext_resource type="Script" uid="uid://bipeecklpi6pw" path="res://scripts/switchboard_socket.gd" id="1_cp8un"]
+[ext_resource type="Texture2D" uid="uid://ba8au0x2pjidj" path="res://textures/input_socket.png" id="2_p0slm"]
+[ext_resource type="Texture2D" uid="uid://dufdioi6rysvc" path="res://textures/output_socket.png" id="3_xftaj"]
 
 [node name="SwitchboardSocket" type="Node2D"]
 script = ExtResource("1_cp8un")
 
-[node name="Socket" type="Sprite2D" parent="."]
+[node name="InputSocket" type="Sprite2D" parent="."]
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_b6yfp")
+texture = ExtResource("2_p0slm")
 
-[node name="Button" type="Button" parent="Socket"]
+[node name="InputButton" type="Button" parent="InputSocket"]
 anchors_preset = -1
 anchor_right = 1.02
 anchor_bottom = 1.02
@@ -19,6 +20,27 @@ offset_top = -50.0
 offset_right = -50.0
 offset_bottom = -50.0
 flat = true
+metadata/_edit_use_anchors_ = true
 
-[connection signal="mouse_entered" from="Socket/Button" to="." method="_on_button_mouse_entered"]
-[connection signal="mouse_exited" from="Socket/Button" to="." method="_on_button_mouse_exited"]
+[node name="OutputSocket" type="Sprite2D" parent="."]
+position = Vector2(70, 0)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_xftaj")
+
+[node name="OutputButton" type="Button" parent="OutputSocket"]
+anchors_preset = -1
+anchor_right = 1.02
+anchor_bottom = 1.02
+offset_left = -50.0
+offset_top = -50.0
+offset_right = -50.0
+offset_bottom = -50.0
+flat = true
+metadata/_edit_use_anchors_ = true
+
+[connection signal="button_down" from="InputSocket/InputButton" to="." method="_on_input_button_button_down"]
+[connection signal="mouse_entered" from="InputSocket/InputButton" to="." method="_on_input_button_mouse_entered"]
+[connection signal="mouse_exited" from="InputSocket/InputButton" to="." method="_on_input_button_mouse_exited"]
+[connection signal="button_down" from="OutputSocket/OutputButton" to="." method="_on_output_button_button_down"]
+[connection signal="mouse_entered" from="OutputSocket/OutputButton" to="." method="_on_output_button_mouse_entered"]
+[connection signal="mouse_exited" from="OutputSocket/OutputButton" to="." method="_on_output_button_mouse_exited"]

@@ -1,17 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bhubpcvphim6a"]
 
-[ext_resource type="PackedScene" uid="uid://beryfgbw458pm" path="res://prefabs/SwitchboardSocket.tscn" id="1_7oc7i"]
+[ext_resource type="Script" uid="uid://dftdvdemha1o2" path="res://scripts/switchboard_manager.gd" id="1_0udp6"]
 
 [node name="Switchboard" type="Node2D"]
-
-[node name="SwitchboardSocket1" parent="." instance=ExtResource("1_7oc7i")]
-position = Vector2(121, 150)
-
-[node name="SwitchboardSocket2" parent="." instance=ExtResource("1_7oc7i")]
-position = Vector2(249, 150)
-
-[node name="SwitchboardSocket3" parent="." instance=ExtResource("1_7oc7i")]
-position = Vector2(442, 150)
-
-[node name="SwitchboardSocket4" parent="." instance=ExtResource("1_7oc7i")]
-position = Vector2(563, 150)
+script = ExtResource("1_0udp6")
