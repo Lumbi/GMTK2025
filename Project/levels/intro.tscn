@@ -1,11 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://dx88bjnnkfcx6"]
+[gd_scene load_steps=3 format=3 uid="uid://dx88bjnnkfcx6"]
 
-[ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="1_8o7kg"]
 [ext_resource type="Script" uid="uid://qcj6x7csjatm" path="res://scripts/intro.gd" id="1_q3mgg"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_w3n8n"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_w3n8n"]
 
 [node name="Intro" type="Node2D"]
 script = ExtResource("1_q3mgg")
@@ -22,21 +19,3 @@ grow_vertical = 2
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/PanelContainer"]
 layout_mode = 2
 texture = SubResource("CanvasTexture_w3n8n")
-
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/PanelContainer"]
-layout_mode = 2
-theme_override_constants/margin_left = 32
-theme_override_constants/margin_top = 32
-theme_override_constants/margin_right = 32
-theme_override_constants/margin_bottom = 32
-
-[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/PanelContainer/MarginContainer"]
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxEmpty_w3n8n")
-
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/PanelContainer/MarginContainer"]
-layout_mode = 2
-
-[node name="DialogueLabel" parent="CanvasLayer/PanelContainer/MarginContainer" instance=ExtResource("1_8o7kg")]
-layout_mode = 2
-text = "Hello World!"
