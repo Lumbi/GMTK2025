@@ -2,7 +2,7 @@ extends Node2D
 
 var wire_segment_prefab = preload("res://prefabs/WireSegment.tscn")
 
-var segment_pair_count = 20
+var segment_pair_count = 10
 var spacing = 20
 var segments = []
 

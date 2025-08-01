@@ -54,6 +54,7 @@ func _on_input_button_button_down():
 	if is_active: # only fire logic to active nodes
 		if !is_socket_connected:
 			is_socket_connected = true
+			find_parent("Switchboard").on_socket_connected(input_socket_node, output_socket_node)
 			input_socket_node.texture = input_socket_connected
 			output_socket_node.texture = output_socket_connected
 
