@@ -53,6 +53,7 @@ func on_socket_connected(socket: Node) -> void:
 	if current_wire:
 		current_wire.move_end_to(input_socket.global_position)
 		switchboard_scoekt_active_nodes.append({"socket": socket, "wire": current_wire})
+		current_wire.freeze()
 		current_wire = null
 		spawn_wire(output_socket.global_position)
 
