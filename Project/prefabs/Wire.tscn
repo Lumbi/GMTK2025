@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=3 uid="uid://22ghqh125tou"]
+
+[ext_resource type="Script" uid="uid://wrcqmb7r0mmi" path="res://scripts/wire.gd" id="1_cq3tt"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xdhyg"]
+radius = 1.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nulyr"]
+radius = 1.0
+
+[node name="Wire" type="Node2D"]
+script = ExtResource("1_cq3tt")
+
+[node name="StartPinStaticBody" type="StaticBody2D" parent="."]
+collision_layer = 2147483648
+
+[node name="StartPinJoint2D" type="PinJoint2D" parent="StartPinStaticBody"]
+unique_name_in_owner = true
+node_a = NodePath("..")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StartPinStaticBody"]
+shape = SubResource("CircleShape2D_xdhyg")
+debug_color = Color(0.866667, 0.00784314, 0.858824, 0.419608)
+
+[node name="EndPinStaticBody" type="StaticBody2D" parent="."]
+position = Vector2(0, 100)
+collision_layer = 2147483648
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EndPinStaticBody"]
+shape = SubResource("CircleShape2D_nulyr")
+debug_color = Color(0.866534, 0.00598516, 0.857575, 0.42)
+
+[node name="EndPinJoint2D" type="PinJoint2D" parent="EndPinStaticBody"]
+unique_name_in_owner = true
+node_b = NodePath("..")

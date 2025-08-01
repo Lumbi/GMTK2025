@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://cx1mra7w1sud0"]
+
+[ext_resource type="PackedScene" uid="uid://22ghqh125tou" path="res://prefabs/Wire.tscn" id="1_w0wyr"]
+[ext_resource type="Script" uid="uid://bkfrmmmdt6qew" path="res://scripts/wire_gym.gd" id="1_w0ykm"]
+
+[node name="WireGym" type="Node2D"]
+script = ExtResource("1_w0ykm")
+
+[node name="Wire" parent="." instance=ExtResource("1_w0wyr")]
+position = Vector2(590, 66)
