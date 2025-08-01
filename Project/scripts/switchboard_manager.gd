@@ -39,6 +39,7 @@ func _process(delta: float) -> void:
 func on_socket_connected(input_socket, output_socket) -> void:
 	if current_wire:
 		current_wire.move_end_to(input_socket.global_position)
+		current_wire.freeze()
 		current_wire = null
 		spawn_wire(output_socket.global_position)
 
