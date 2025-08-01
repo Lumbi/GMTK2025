@@ -1,0 +1,45 @@
+[gd_scene load_steps=4 format=3 uid="uid://cdlwyfc1ftd6v"]
+
+[ext_resource type="Texture2D" uid="uid://4div57fok6l0" path="res://textures/digit_0.png" id="1_fibru"]
+[ext_resource type="Script" uid="uid://bo4raklks74p4" path="res://scripts/digit_input.gd" id="1_mjxas"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mjxas"]
+bg_color = Color(0.679038, 0.528196, 0.256885, 1)
+
+[node name="NumericUpDown" type="Control"]
+custom_minimum_size = Vector2(50, 156)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+script = ExtResource("1_mjxas")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_mjxas")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Up" type="Button" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "^"
+
+[node name="DigitTexture" type="TextureRect" parent="PanelContainer/VBoxContainer"]
+unique_name_in_owner = true
+self_modulate = Color(0.284659, 0.105826, 0.0271913, 1)
+layout_mode = 2
+texture = ExtResource("1_fibru")
+
+[node name="Down" type="Button" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "v"
+
+[connection signal="pressed" from="PanelContainer/VBoxContainer/Up" to="." method="_on_up_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/Down" to="." method="_on_down_pressed"]
