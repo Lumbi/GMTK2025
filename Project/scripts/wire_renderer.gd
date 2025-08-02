@@ -2,9 +2,11 @@ extends Node2D
 
 @onready var line2d: Line2D = $Line2D
 @onready var plug:Node2D = $plug
+@onready var plug_frist_point:Node2D = $plug/plug_first_point
 
 @export var colors:Array[Color]
 
+var isFirstPointVisible = false
 
 func set_plug_position():
 	plug.global_position = line2d.points[line2d.points.size() - 1]
@@ -14,7 +16,14 @@ func _process(delta: float) -> void:
 	
 func _ready() -> void:
 	set_random_color()
-
+	if(isFirstPointVisible):
+		enable_first_point_plug()
+	
+func enable_first_point_plug():
+	plug_frist_point.visible = true	
+	isFirstPointVisible = true	
+	plug_frist_point.global_position = line2d.points[0]
+	
 func set_points(points:Array[Vector2]):
 	line2d.clear_points()
 	for p in points:
