@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://co7xpnrb6fa6b"]
+[gd_scene load_steps=10 format=3 uid="uid://co7xpnrb6fa6b"]
 
 [ext_resource type="PackedScene" uid="uid://ks7hrn0lw04d" path="res://prefabs/2digit_input.tscn" id="1_5sghs"]
 [ext_resource type="PackedScene" uid="uid://6liunmr3rww5" path="res://prefabs/4digit_input.tscn" id="1_8d55c"]
+[ext_resource type="Script" uid="uid://bv1nua1wcmg11" path="res://scripts/time_input.gd" id="1_ormei"]
 [ext_resource type="Texture2D" uid="uid://dcqobca5esewm" path="res://textures/text_annus.png" id="3_0srpd"]
 [ext_resource type="Texture2D" uid="uid://bvalxcwbnufqj" path="res://textures/text_month.png" id="4_3beix"]
 [ext_resource type="Texture2D" uid="uid://dht4tw4qsfio1" path="res://textures/text_day.png" id="4_iob55"]
@@ -11,6 +12,7 @@
 [sub_resource type="CanvasTexture" id="CanvasTexture_cokle"]
 
 [node name="TimeInput" type="Node2D"]
+script = ExtResource("1_ormei")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -82,3 +84,12 @@ offset_right = 983.0
 offset_bottom = 576.0
 texture_normal = ExtResource("6_5umms")
 texture_hover = ExtResource("7_3g8l8")
+
+[node name="Button" type="Button" parent="CanvasLayer"]
+offset_left = 39.0
+offset_top = 34.0
+offset_right = 124.0
+offset_bottom = 76.0
+text = " Return "
+
+[connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]

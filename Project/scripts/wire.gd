@@ -2,17 +2,29 @@ extends Node2D
 
 var wire_segment_prefab = preload("res://prefabs/WireSegment.tscn")
 
-var segment_pair_count = 6
+var segment_pair_count = 8
 var spacing = 20
 var segments = []
 const DRAW_COLOR = Color.GREEN
 const DRAW_WIDTH = 10
+
+var wire_renderer_scene = preload("res://prefabs/wire_renderer.tscn")
+var wire_renderer
+
+@onready var start_pin = $"StartPinStaticBody"
+@onready var end_pin = $"EndPinStaticBody"
+
+func _exit_tree() -> void:
+	wire_renderer.queue_free()
 
 func move_end_to(p: Vector2):
 	var end_pin = $"EndPinStaticBody"
 	end_pin.global_position = p
 
 func _ready() -> void:
+
+	# SETUP SEGMENTS
+	
 	var start_pin = $"StartPinStaticBody"
 	var end_pin = $"EndPinStaticBody"
 	var start_pin_joint = $"%StartPinJoint2D"
@@ -56,6 +68,11 @@ func _ready() -> void:
 	# tie the ends
 	start_pin_joint.node_b = first_segment.get_path()
 	end_pin_joint.node_a = last_segment.get_path()
+	
+	# SETUP RENDERER
+	
+	wire_renderer = wire_renderer_scene.instantiate()
+	add_sibling(wire_renderer)
 
 # remove physics
 func freeze() -> void:
@@ -68,12 +85,15 @@ func unfreeze() -> void:
 		segment.set_deferred("freeze", false)
 
 func _process(_delta: float) -> void:
-	queue_redraw()
+	var points: Array[Vector2] = []
+	points.append(start_pin.global_position)
+	for segment in segments:
+		points.append(segment.global_position)
+	points.append(end_pin.global_position)
+	wire_renderer.set_points(points)
 
-func _draw() -> void:
-	var start_pin = $"StartPinStaticBody"
-	var end_pin = $"EndPinStaticBody"
-	
+# OLD STUFF
+func _draw_test() -> void:
 	var start_pos = start_pin.position
 	var end_pos
 	for segment in segments:

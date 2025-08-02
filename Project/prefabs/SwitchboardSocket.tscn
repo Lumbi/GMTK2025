@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://beryfgbw458pm"]
+[gd_scene load_steps=5 format=3 uid="uid://beryfgbw458pm"]
 
 [ext_resource type="Script" uid="uid://bipeecklpi6pw" path="res://scripts/switchboard_socket.gd" id="1_cp8un"]
 [ext_resource type="Texture2D" uid="uid://ba8au0x2pjidj" path="res://textures/input_socket.png" id="2_p0slm"]
 [ext_resource type="Texture2D" uid="uid://dufdioi6rysvc" path="res://textures/output_socket.png" id="3_xftaj"]
+[ext_resource type="Texture2D" uid="uid://bd6toncvpo5gj" path="res://textures/shapes/shape_cross.png" id="4_xftaj"]
 
 [node name="SwitchboardSocket" type="Node2D"]
 script = ExtResource("1_cp8un")
@@ -22,6 +23,14 @@ offset_bottom = -50.0
 flat = true
 metadata/_edit_use_anchors_ = true
 
+[node name="InputText" type="RichTextLabel" parent="InputSocket"]
+offset_left = -40.0
+offset_top = 52.0
+offset_right = 40.0
+offset_bottom = 82.0
+text = "Input"
+horizontal_alignment = 1
+
 [node name="OutputSocket" type="Sprite2D" parent="."]
 position = Vector2(70, 0)
 scale = Vector2(0.5, 0.5)
@@ -37,6 +46,19 @@ offset_right = -50.0
 offset_bottom = -50.0
 flat = true
 metadata/_edit_use_anchors_ = true
+
+[node name="Output" type="RichTextLabel" parent="OutputSocket"]
+offset_left = -40.0
+offset_top = 52.0
+offset_right = 40.0
+offset_bottom = 82.0
+text = "Output"
+horizontal_alignment = 1
+
+[node name="Shape" type="Sprite2D" parent="."]
+position = Vector2(36, -67)
+scale = Vector2(0.44, 0.44)
+texture = ExtResource("4_xftaj")
 
 [connection signal="button_down" from="InputSocket/InputButton" to="." method="_on_input_button_button_down"]
 [connection signal="mouse_entered" from="InputSocket/InputButton" to="." method="_on_input_button_mouse_entered"]
