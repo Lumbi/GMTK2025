@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://c0yrhpggtuifq"]
+[gd_scene load_steps=5 format=3 uid="uid://c0yrhpggtuifq"]
 
 [ext_resource type="Script" uid="uid://cc26jou0o3fdk" path="res://scripts/desk.gd" id="1_b51fv"]
 [ext_resource type="Script" uid="uid://c617b1gh5fxtl" path="res://scripts/camera_2d.gd" id="2_0jnev"]
+[ext_resource type="PackedScene" uid="uid://bhubpcvphim6a" path="res://levels/switchboard.tscn" id="3_tbp0x"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_r4fk6"]
 
@@ -12,6 +13,7 @@ script = ExtResource("1_b51fv")
 follow_viewport_enabled = true
 
 [node name="DebugYearSwitchBoardTextureRect" type="TextureRect" parent="CanvasLayer"]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -83,10 +85,10 @@ offset_bottom = 393.0
 flat = true
 
 [node name="YearSwitchboardButton" type="Button" parent="CanvasLayer"]
-offset_left = -427.0
-offset_top = -174.0
-offset_right = 468.0
-offset_bottom = 385.0
+offset_left = -401.0
+offset_top = 261.0
+offset_right = 409.0
+offset_bottom = 469.0
 flat = true
 
 [node name="TimeMachineButton" type="Button" parent="CanvasLayer"]
@@ -116,6 +118,9 @@ offset_top = 32.0
 offset_right = 90.0
 offset_bottom = 63.0
 text = " BACK "
+
+[node name="YearSwitchboard" parent="." instance=ExtResource("3_tbp0x")]
+position = Vector2(-697, -136)
 
 [connection signal="pressed" from="CanvasLayer/MonthSwitchboardButton" to="." method="_on_month_switchboard_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/DaySwitchboardButton" to="." method="_on_day_switchboard_button_pressed"]
