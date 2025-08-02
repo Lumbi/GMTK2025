@@ -34,8 +34,6 @@ func _on_input_button_mouse_entered():
 	if !is_socket_connected:
 		if switchboard_manager.current_wire != null:
 			Input.set_custom_mouse_cursor(socket_connect_cursor_res) ## avoid trying to connect from other switchboards 
-		else:
-			Input.set_custom_mouse_cursor(socket_disconnect_cursor_res)
 
 func _on_input_button_mouse_exited():
 	Input.set_custom_mouse_cursor(null)
@@ -69,3 +67,8 @@ func mark_as_max_connection_reached():
 func mark_as_max_connection_unreached():
 	if is_socket_connected == false :
 		swap_to_unconnected_socket()
+
+func mark_as_inactive():
+		input_socket_node.texture = output_socket_not_connected
+		output_socket_node.texture = output_socket_not_connected
+

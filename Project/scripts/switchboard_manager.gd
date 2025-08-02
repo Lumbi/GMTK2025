@@ -29,6 +29,11 @@ func activate():
 	# spawn the first wire
 	spawn_wire(%FirstWireSpawnPoint.global_position)
 
+func inactive():
+	# spawn the first wire
+	for switchboard_socket in switchboard_sockets:
+		switchboard_socket.mark_as_inactive()
+
 func reset():
 	active_socketid = -1
 	# free current wire

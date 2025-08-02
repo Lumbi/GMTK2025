@@ -3,15 +3,21 @@ extends Node2D
 func _on_day_switchboard_button_pressed() -> void:
 	zoom_to($DayZoomTarget.global_position)
 	$DaySwitchboard/Switchboard.activate()
+	$MonthSwitchboard/Switchboard.inactive()
+	$YearSwitchboard/Switchboard.inactive()
 	pass
 
 func _on_month_switchboard_button_pressed() -> void:
 	zoom_to($MonthZoomTarget.global_position)
+	$DaySwitchboard/Switchboard.inactive()
 	$MonthSwitchboard/Switchboard.activate()
+	$YearSwitchboard/Switchboard.inactive()
 	pass
 	
 func _on_year_switchboard_button_pressed() -> void:
 	zoom_to($YearZoomTarget.global_position)
+	$DaySwitchboard/Switchboard.inactive()
+	$MonthSwitchboard/Switchboard.inactive()
 	$YearSwitchboard/Switchboard.activate()
 	pass
 
