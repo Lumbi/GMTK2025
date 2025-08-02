@@ -4,7 +4,7 @@ extends Node2D
 @onready var plug:Node2D = $plug
 @onready var plug_frist_point:Node2D = $plug_first_point
 @onready var plug_plugged:Node2D = $plug_plugged
-
+@onready var vfx_sparks:CPUParticles2D = $plug_plugged/vfx_sparks
 
 @export var cursorOffset:Vector2
 @export var colors:Array[Color]
@@ -24,6 +24,7 @@ func plug_wire():
 	plug_plugged.visible = true
 	plug.visible = false
 	plugged = true
+	vfx_sparks.emitting = true
 	for i in  range(line2d.points.size()):
 		if i == 0:
 			continue
@@ -59,9 +60,6 @@ func set_points(points:Array[Vector2]):
 	if(isFirstPointVisible):
 		plug_frist_point.global_position = line2d.get_point_position(0)
 
-		
-	
-	
 func set_color(color:Color):
 	line2d.default_color = color
 	
