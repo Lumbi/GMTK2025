@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://22ghqh125tou" path="res://prefabs/Wire.tscn" id="1_w0wyr"]
 [ext_resource type="Script" uid="uid://bkfrmmmdt6qew" path="res://scripts/wire_gym.gd" id="1_w0ykm"]
-[ext_resource type="PackedScene" uid="uid://b2ctmcxt4dwih" path="res://prefabs/shape_dial.tscn" id="2_oshkk"]
+[ext_resource type="PackedScene" uid="uid://ttq13tvt5bes" path="res://prefabs/shape_dial.tscn" id="2_oshkk"]
 
 [node name="WireGym" type="Node2D"]
 script = ExtResource("1_w0ykm")

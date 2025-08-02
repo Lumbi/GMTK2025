@@ -16,7 +16,6 @@ script = ExtResource("1_kld82")
 
 [node name="Line2D" type="Line2D" parent="."]
 material = SubResource("ShaderMaterial_oo4wj")
-position = Vector2(22, -9)
 points = PackedVector2Array(15, 62, 106, 153, 126, 182, 195, 218, 528, 109)
 texture_mode = 1
 joint_mode = 1
