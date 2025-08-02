@@ -1,4 +1,4 @@
-extends Control
+class_name DigitInput extends Control
 
 const digit_0 = preload("res://textures/digit_0.png")
 const digit_1 = preload("res://textures/digit_1.png")
@@ -33,3 +33,6 @@ func update():
 		7: %DigitTexture.texture = digit_7
 		8: %DigitTexture.texture = digit_8
 		9: %DigitTexture.texture = digit_9
+
+func get_value() -> int:
+	return digit

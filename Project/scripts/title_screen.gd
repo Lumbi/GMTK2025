@@ -10,6 +10,14 @@ func _input(event):
 	if event.is_action_pressed("ui_cancel"):
 		quit()
 
-
 func _on_play_button_pressed() -> void:
 	Global.go_to_level("intro")
+
+func _on_fullscreen_button_pressed() -> void:
+	if DisplayServer.window_get_mode() == DisplayServer.WINDOW_MODE_WINDOWED:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+		%ScreenButton.text = "Window"
+	else:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+		DisplayServer.window_set_size(Vector2i(1152, 648))
+		%ScreenButton.text = "Fullscreen"

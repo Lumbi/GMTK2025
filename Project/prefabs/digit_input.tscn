@@ -24,6 +24,7 @@ offset_bottom = 40.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_mjxas")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 theme_override_constants/separation = 8
 
@@ -34,8 +35,10 @@ text = "^"
 [node name="DigitTexture" type="TextureRect" parent="PanelContainer/VBoxContainer"]
 unique_name_in_owner = true
 self_modulate = Color(0.284659, 0.105826, 0.0271913, 1)
+custom_minimum_size = Vector2(40, 50)
 layout_mode = 2
 texture = ExtResource("1_fibru")
+expand_mode = 4
 
 [node name="Down" type="Button" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
