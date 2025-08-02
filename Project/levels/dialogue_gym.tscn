@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://ceodfpnbc0nre"]
+
+[ext_resource type="Script" uid="uid://ckapp5irqe6h3" path="res://scripts/dialogue_gym.gd" id="1_x2g18"]
+
+[node name="DialogueGym" type="Node2D"]
+script = ExtResource("1_x2g18")
