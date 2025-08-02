@@ -12,7 +12,8 @@ func _on_year_switchboard_button_pressed() -> void:
 	$Camera2D.zoom_to(1.0, $YearZoomTarget.global_position)
 	pass
 
-func _on_time_machine_button_pressed() -> void:
+func _on_input_button_pressed() -> void:
+	$Camera2D.zoom_to(1.0, $InputZoomTarget.global_position)
 	pass
 
 func _on_back_button_pressed() -> void:
