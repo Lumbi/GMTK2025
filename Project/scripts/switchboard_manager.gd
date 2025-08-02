@@ -65,7 +65,10 @@ func _process(_delta: float) -> void:
 	# move the current wire's end to mouse position
 	if current_wire:
 		var mouse_pos = get_viewport().get_mouse_position()
-		current_wire.move_end_to(mouse_pos)
+		var delta = mouse_pos - current_wire.global_position
+		const MAX_WIRE_LENGTH = 700
+		delta = delta.limit_length(MAX_WIRE_LENGTH)
+		current_wire.move_end_to(current_wire.global_position + delta)
 
 func on_socket_connected(socket: Node) -> void:
 	var input_socket = socket.input_socket_node
