@@ -104,8 +104,8 @@ func on_socket_disconected(_socket: Node) -> void:
 func spawn_wire(spawn_position: Vector2) -> void:
 	if not current_wire:
 		current_wire = wire_prefab.instantiate()
-		current_wire.global_position = spawn_position
 		add_child(current_wire)
+		current_wire.global_position = spawn_position
 
 func _on_socket_input_button_down(socket: Node):
 	if is_already_connected(socket) == false and switchboard_scoekt_active_nodes.size() < max_connections:
