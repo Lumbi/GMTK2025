@@ -23,6 +23,14 @@ offset_bottom = -50.0
 flat = true
 metadata/_edit_use_anchors_ = true
 
+[node name="InputText" type="RichTextLabel" parent="InputSocket"]
+offset_left = -40.0
+offset_top = 52.0
+offset_right = 40.0
+offset_bottom = 82.0
+text = "Input"
+horizontal_alignment = 1
+
 [node name="OutputSocket" type="Sprite2D" parent="."]
 position = Vector2(70, 0)
 scale = Vector2(0.5, 0.5)
@@ -38,6 +46,14 @@ offset_right = -50.0
 offset_bottom = -50.0
 flat = true
 metadata/_edit_use_anchors_ = true
+
+[node name="Output" type="RichTextLabel" parent="OutputSocket"]
+offset_left = -40.0
+offset_top = 52.0
+offset_right = 40.0
+offset_bottom = 82.0
+text = "Output"
+horizontal_alignment = 1
 
 [node name="Shape" type="Sprite2D" parent="."]
 position = Vector2(36, -67)

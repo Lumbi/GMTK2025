@@ -14,6 +14,9 @@ var wire_renderer
 @onready var start_pin = $"StartPinStaticBody"
 @onready var end_pin = $"EndPinStaticBody"
 
+func _exit_tree() -> void:
+	wire_renderer.queue_free()
+
 func move_end_to(p: Vector2):
 	var end_pin = $"EndPinStaticBody"
 	end_pin.global_position = p
