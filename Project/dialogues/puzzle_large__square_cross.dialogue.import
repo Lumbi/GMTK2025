@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://dsx8mwr8mmjou"
+path="res://.godot/imported/puzzle_large__square_cross.dialogue-8a92d19f0a7970f0f28ef82fe9dfa92e.tres"
+
+[deps]
+
+source_file="res://dialogues/puzzle_large__square_cross.dialogue"
+dest_files=["res://.godot/imported/puzzle_large__square_cross.dialogue-8a92d19f0a7970f0f28ef82fe9dfa92e.tres"]
+
+[params]
+
+defaults=true

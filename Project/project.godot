@@ -34,7 +34,7 @@ enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg")
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://dialogues/test.dialogue")
+locale/translations_pot_files=PackedStringArray("res://dialogues/test.dialogue", "res://dialogues/puzzle_small__cross_triangle.dialogue", "res://dialogues/puzzle_small__circle_cross.dialogue", "res://dialogues/puzzle_small__circle_triangle.dialogue", "res://dialogues/puzzle_medium__funnel_square.dialogue", "res://dialogues/puzzle_medium__triangle_funnel.dialogue", "res://dialogues/puzzle_medium__square_cross.dialogue", "res://dialogues/puzzle_medium__square_triangle.dialogue", "res://dialogues/puzzle_large__square_cross.dialogue", "res://dialogues/puzzle_large__funnel_diamond.dialogue", "res://dialogues/puzzle_large__square_circle.dialogue", "res://dialogues/puzzle_large__diamond_circle.dialogue", "res://dialogues/puzzle_large__funnel_square.dialogue", "res://dialogues/puzzle_large__funnel_circle.dialogue", "res://dialogues/debug_select_puzzle.dialogue")
 
 [rendering]
 
