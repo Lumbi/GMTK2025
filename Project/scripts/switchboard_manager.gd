@@ -140,10 +140,11 @@ func spawn_wire(spawn_position: Vector2) -> void:
 		current_wire.global_position = spawn_position
 
 func _on_socket_input_button_down(socket: Node):
-	if is_already_connected(socket) == false and switchboard_active_socket_nodes.size() < max_connections:
-		on_socket_connected(socket)
-		socket.swap_to_connected_socket()
-		active_socketid = socket.socketid
+	if current_wire:
+		if is_already_connected(socket) == false and switchboard_active_socket_nodes.size() < max_connections:
+			on_socket_connected(socket)
+			socket.swap_to_connected_socket()
+			active_socketid = socket.socketid
 
 func _on_socket_output_button_down(socket: Node):
 	if active_socketid == socket.socketid:

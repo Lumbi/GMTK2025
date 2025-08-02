@@ -12,6 +12,7 @@ var input_socket_node: Sprite2D
 var output_socket_node: Sprite2D
 var shape_sprite: Sprite2D
 var socketid: int = -1
+var switchboard_manager : Node
 
 func _ready():
 	# Get references to the socket nodes
@@ -22,6 +23,7 @@ func _ready():
 	output_socket_node.texture = output_socket_not_connected
 	#randomize Shapes in Switchboard will be be more fun
 	shape_sprite.texture = Global.get_texture(shape)
+	switchboard_manager = get_node("../../../Switchboard")
 
 func reset():
 	is_socket_connected = false
@@ -30,7 +32,10 @@ func reset():
 
 func _on_input_button_mouse_entered():
 	if !is_socket_connected:
-		Input.set_custom_mouse_cursor(socket_connect_cursor_res)
+		if switchboard_manager.current_wire != null:
+			Input.set_custom_mouse_cursor(socket_connect_cursor_res) ## avoid trying to connect from other switchboards 
+		else:
+			Input.set_custom_mouse_cursor(socket_disconnect_cursor_res)
 
 func _on_input_button_mouse_exited():
 	Input.set_custom_mouse_cursor(null)

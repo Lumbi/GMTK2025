@@ -19,19 +19,19 @@ unique_name_in_owner = true
 position = Vector2(199, 50)
 
 [node name="SwitchboardSocket" parent="Switchboard/SwitchboardSockets" instance=ExtResource("2_b6n40")]
-position = Vector2(49, 145)
+position = Vector2(50, 145)
 shape = 5
 
 [node name="SwitchboardSocket2" parent="Switchboard/SwitchboardSockets" instance=ExtResource("2_b6n40")]
-position = Vector2(198, 145)
+position = Vector2(200, 145)
 shape = 4
 
 [node name="SwitchboardSocket3" parent="Switchboard/SwitchboardSockets" instance=ExtResource("2_b6n40")]
-position = Vector2(538, 145)
+position = Vector2(350, 145)
 shape = 2
 
 [node name="SwitchboardSocket4" parent="Switchboard/SwitchboardSockets" instance=ExtResource("2_b6n40")]
-position = Vector2(379, 145)
+position = Vector2(500, 145)
 shape = 1
 
 [node name="FirstWireSpawnPoint" type="Node2D" parent="Switchboard"]
