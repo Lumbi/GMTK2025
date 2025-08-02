@@ -1,8 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://bborvgohyh1ch"]
+[gd_scene load_steps=9 format=3 uid="uid://bborvgohyh1ch"]
 
 [ext_resource type="Script" uid="uid://dymurc7fv1l5i" path="res://scripts/wire_renderer.gd" id="1_kld82"]
 [ext_resource type="Texture2D" uid="uid://bytkcfxq0pgqa" path="res://textures/plug.png" id="2_b11aw"]
+[ext_resource type="Texture2D" uid="uid://cok4vm4vhhxmv" path="res://textures/plug_pin.png" id="2_robht"]
 [ext_resource type="Shader" uid="uid://1ojkvyjeqcdr" path="res://Shaders/wire_shader.gdshader" id="2_ydev4"]
+[ext_resource type="Texture2D" uid="uid://drft1haxjufb6" path="res://textures/plug_body.png" id="3_fm5n3"]
 [ext_resource type="Texture2D" uid="uid://c35ttyt215oh4" path="res://textures/checkboard.png" id="3_ydev4"]
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_oo4wj"]
@@ -19,8 +21,35 @@ colors = Array[Color]([Color(3.85046e-07, 0.634837, 0.464032, 1), Color(0.870627
 
 [node name="plug" type="Node2D" parent="."]
 
-[node name="sprite" type="Sprite2D" parent="plug"]
+[node name="Sprite2D" type="Sprite2D" parent="plug"]
+position = Vector2(-15, -30)
+rotation = -0.455622
 scale = Vector2(0.05, 0.05)
+texture = ExtResource("2_robht")
+
+[node name="Sprite2D2" type="Sprite2D" parent="plug"]
+position = Vector2(-6, -13)
+rotation = -0.455622
+scale = Vector2(-0.0698436, 0.0668838)
+texture = ExtResource("3_fm5n3")
+
+[node name="Node2D" type="Node2D" parent="plug"]
+position = Vector2(-6, -13)
+rotation = 2.68597
+scale = Vector2(0.06, -0.057)
+
+[node name="sprite" type="Sprite2D" parent="plug/Node2D"]
+position = Vector2(4.7585, 214.012)
+rotation = -0.472957
+scale = Vector2(0.505489, -0.511358)
+skew = -0.334564
+texture = ExtResource("2_b11aw")
+
+[node name="plug_first_point" type="Node2D" parent="plug"]
+visible = false
+scale = Vector2(0.04, 0.04)
+
+[node name="Sprite2D" type="Sprite2D" parent="plug/plug_first_point"]
 texture = ExtResource("2_b11aw")
 
 [node name="Line2D" type="Line2D" parent="."]
