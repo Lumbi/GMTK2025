@@ -1,8 +1,8 @@
 [gd_scene load_steps=9 format=3 uid="uid://cot4gmg4qs8lb"]
 
 [ext_resource type="Script" uid="uid://bv1nua1wcmg11" path="res://scripts/time_input.gd" id="1_1mtwh"]
-[ext_resource type="PackedScene" uid="uid://6liunmr3rww5" path="res://prefabs/4digit_input.tscn" id="2_qt5um"]
-[ext_resource type="PackedScene" uid="uid://ks7hrn0lw04d" path="res://prefabs/2digit_input.tscn" id="3_7r45r"]
+[ext_resource type="PackedScene" uid="uid://b4w65f8jynbbx" path="res://prefabs/4digit_input.tscn" id="2_qt5um"]
+[ext_resource type="PackedScene" uid="uid://vgi51wagrca6" path="res://prefabs/2digit_input.tscn" id="3_7r45r"]
 [ext_resource type="Texture2D" uid="uid://dcqobca5esewm" path="res://textures/text_annus.png" id="4_roeqe"]
 [ext_resource type="Texture2D" uid="uid://bvalxcwbnufqj" path="res://textures/text_month.png" id="5_jxch0"]
 [ext_resource type="Texture2D" uid="uid://dht4tw4qsfio1" path="res://textures/text_day.png" id="6_48jwo"]

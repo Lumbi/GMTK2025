@@ -96,7 +96,7 @@ position = Vector2(-681, -229)
 position = Vector2(-667, -649)
 
 [node name="DaySwitchboard" parent="." instance=ExtResource("8_1cuu8")]
-position = Vector2(-1660, -623)
+position = Vector2(-1664, -585)
 
 [connection signal="pressed" from="CanvasLayer/MonthSwitchboardButton" to="." method="_on_month_switchboard_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/DaySwitchboardButton" to="." method="_on_day_switchboard_button_pressed"]

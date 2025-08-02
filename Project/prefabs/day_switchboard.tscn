@@ -6,6 +6,7 @@
 [node name="DaySwitchboard" type="Node2D"]
 
 [node name="Switchboard" parent="." instance=ExtResource("1_6ggwg")]
+position = Vector2(-2, -20)
 puzzleType = 2
 shapeStations_filename_to_key = Dictionary[String, String]({
 "circle_cross": "circle_cross",
@@ -17,14 +18,14 @@ shapeStations_filename_to_key = Dictionary[String, String]({
 unique_name_in_owner = true
 
 [node name="SwitchboardSocket" parent="Switchboard/SwitchboardSockets" instance=ExtResource("2_cdlke")]
-position = Vector2(960, 385)
+position = Vector2(963, 363)
 
 [node name="SwitchboardSocket2" parent="Switchboard/SwitchboardSockets" instance=ExtResource("2_cdlke")]
-position = Vector2(960, 555)
+position = Vector2(963, 508)
 shape = 2
 
 [node name="SwitchboardSocket3" parent="Switchboard/SwitchboardSockets" instance=ExtResource("2_cdlke")]
-position = Vector2(960, 723)
+position = Vector2(963, 643)
 shape = 1
 
 [node name="FirstWireSpawnPoint" type="Node2D" parent="."]
