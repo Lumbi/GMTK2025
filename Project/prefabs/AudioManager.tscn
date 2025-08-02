@@ -1,6 +1,9 @@
-[gd_scene format=3 uid="uid://de6bydf3joeov"]
+[gd_scene load_steps=2 format=3 uid="uid://de6bydf3joeov"]
+
+[ext_resource type="Script" uid="uid://cr3kbhwva88qc" path="res://scripts/audio_manager.gd" id="1_mccn2"]
 
 [node name="AudioManager" type="Node2D"]
+script = ExtResource("1_mccn2")
 
 [node name="Ambince" type="AudioStreamPlayer2D" parent="."]
 
