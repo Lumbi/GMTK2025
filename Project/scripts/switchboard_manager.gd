@@ -111,6 +111,7 @@ func on_socket_connected(socket: Node) -> void:
 		current_wire.move_end_to(input_socket.global_position)
 		switchboard_active_socket_nodes.append({"socket": socket, "wire": current_wire})
 		current_wire.freeze()
+		current_wire.plug_wire()
 		current_wire = null
 		spawn_wire(output_socket.global_position)
 		shape_dial.toggle_shape(socket.shape)
@@ -143,6 +144,7 @@ func spawn_wire(spawn_position: Vector2) -> void:
 		current_wire = wire_prefab.instantiate()
 		add_child(current_wire)
 		current_wire.global_position = spawn_position
+		current_wire.enable_first_point_plug()
 
 func _on_socket_input_button_down(socket: Node):
 	if current_wire:

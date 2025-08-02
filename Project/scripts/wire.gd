@@ -103,3 +103,9 @@ func _draw_test() -> void:
 		draw_line(start_pos, end_pos, DRAW_COLOR, DRAW_WIDTH)
 		start_pos = end_pos
 	draw_line(start_pos, end_pin.position, DRAW_COLOR, DRAW_WIDTH)
+
+func enable_first_point_plug() -> void:
+	pass
+
+func plug_wire() -> void:
+	pass

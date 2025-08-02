@@ -10,7 +10,7 @@ position = Vector2(-2, -20)
 puzzleType = 2
 shapeStations_filename_to_key = Dictionary[String, String]({
 "circle_cross": "circle_cross",
-"triangle_circle": "circle_triangle",
+"circle_triangle": "circle_triangle",
 "triangle_cross": "cross_triangle"
 })
 

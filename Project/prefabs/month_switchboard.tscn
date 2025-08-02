@@ -10,7 +10,7 @@ puzzleType = 1
 shapeStations_filename_to_key = Dictionary[String, String]({
 "cross_square": "square_cross",
 "funnel_square": "funnel_square",
-"funnel_triangle": "triangle_funnel",
+"triangle_funnel": "triangle_funnel",
 "triangle_square": "square_triangle"
 })
 
