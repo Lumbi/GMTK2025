@@ -1,8 +1,8 @@
 extends Node2D
-@export var output_socket_not_connected: Texture2D = preload("res://textures/socket.png")
-@export var output_socket_connected: Texture2D = preload("res://textures/output_socket.png") 
-@export var input_socket_not_connected: Texture2D = preload("res://textures/input_socket.png") 
-@export var input_socket_connected: Texture2D = preload("res://textures/socket.png") 
+@export var output_socket_not_connected: Texture2D = preload("res://textures/Socket_LED_Default.png")
+@export var output_socket_connected: Texture2D = preload("res://textures/Socket_LED_BLUE.png") 
+@export var input_socket_not_connected: Texture2D = preload("res://textures/Socket_LED_ON.png") 
+@export var input_socket_connected: Texture2D = preload("res://textures/Socket_LED_Default.png") 
 @export var shape: Global.Shape
 
 var socket_connect_cursor_res = load("res://textures/socket_connect_cursor.png")
