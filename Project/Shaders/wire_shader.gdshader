@@ -92,17 +92,19 @@ void fragment() {
 	uv.x =  fract(uv.x*4.)-.5;
 	float box = step(length(uv),.5);
 	box = sdRoundedBox(uv, vec2(.25,.25), vec4(0.1,.1,.1,.1));
-	float gradient = smoothstep(.8,1, 1. - uv.y);
+	float randomHue = random(floor(UV.x)/50.);
+	float gradient = smoothstep(.8,1, 1. - uv.y + randomHue*0.08);
 	box = step(box,.2);
 	float alpha = smoothstep(0.48,0.52,box);
 
-	float randomHue = random(floor(UV.x)/50.);
 	vec3 color = COLOR.rgb;
 	color = hueShift(color, randomHue*.2);
+	gradient+=randomHue*0.2;
 	vec3 shadowCol = hueShift(shadowColor.rgb, length(color.rgb)*2.5);
 	vec3 c =mix(color.rgb, mix(shadowCol.rgb, color.rgb * box,gradient)*0.5,.8);
 
 	COLOR = vec4(c,alpha) ;
+
 }
 
 //void light() {
