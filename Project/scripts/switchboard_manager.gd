@@ -111,7 +111,7 @@ func on_socket_connected(socket: Node) -> void:
 		current_wire.move_end_to(input_socket.global_position)
 		switchboard_active_socket_nodes.append({"socket": socket, "wire": current_wire})
 		current_wire.freeze()
-		current_wire.plug_wire()
+		current_wire.wire_renderer.plug_wire()
 		current_wire = null
 		spawn_wire(output_socket.global_position)
 		shape_dial.toggle_shape(socket.shape)
@@ -127,6 +127,7 @@ func on_socket_disconected(_socket: Node) -> void:
 		shape_dial.toggle_shape(socket.shape)
 		current_wire.queue_free()
 		current_wire = wire
+		current_wire.wire_renderer.unplug_wire()
 		wire.unfreeze()
 	if !switchboard_active_socket_nodes.is_empty(): 
 		var previous_node = switchboard_active_socket_nodes.back()
