@@ -17,7 +17,6 @@ var shape_dial : Node
 var shapes : Array[Texture2D] = []
 
 func _ready():
-	#spawn_switchboard_grid()
 	shape_dial = $ShapeDial
 	# Collect all SwitchboardSocket children
 	collect_switchboard_sockets()
@@ -26,15 +25,16 @@ func _ready():
 	spawn_wire(%FirstWireSpawnPoint.global_position)
 
 func collect_switchboard_sockets():
-	var switchboard_sockets_node = get_node("SwitchboardSockets")
-	switchboard_sockets = switchboard_sockets_node.get_children()
-	var index = 0
-	for socket_instance in switchboard_sockets:
-		# Connect the input button signal to the manager
-		socket_instance.get_node("InputSocket/InputButton").button_down.connect(_on_socket_input_button_down.bind(socket_instance))
-		socket_instance.get_node("OutputSocket/OutputButton").button_down.connect(_on_socket_output_button_down.bind(socket_instance))
-		socket_instance.socketid = index
-		index += 1 
+	var switchboard_sockets_node = %SwitchboardSockets
+	if switchboard_sockets_node:
+		switchboard_sockets = switchboard_sockets_node.get_children()
+		var index = 0
+		for socket_instance in switchboard_sockets:
+			# Connect the input button signal to the manager
+			socket_instance.get_node("InputSocket/InputButton").button_down.connect(_on_socket_input_button_down.bind(socket_instance))
+			socket_instance.get_node("OutputSocket/OutputButton").button_down.connect(_on_socket_output_button_down.bind(socket_instance))
+			socket_instance.socketid = index
+			index += 1 
 		
 
 

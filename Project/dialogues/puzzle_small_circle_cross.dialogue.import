@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://d08kpl5w0436d"
+path="res://.godot/imported/puzzle_small_circle_cross.dialogue-04dd312799870d92f96fc236572e7e2b.tres"
+
+[deps]
+
+source_file="res://dialogues/puzzle_small_circle_cross.dialogue"
+dest_files=["res://.godot/imported/puzzle_small_circle_cross.dialogue-04dd312799870d92f96fc236572e7e2b.tres"]
+
+[params]
+
+defaults=true

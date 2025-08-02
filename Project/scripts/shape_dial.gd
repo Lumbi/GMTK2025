@@ -15,8 +15,10 @@ func get_sprite(shape) -> Sprite2D:
 func toggle_shape(shape) -> void:
 	var sprite = get_sprite(shape)
 	sprite.visible = !sprite.visible
+	print(get_dial_code())
 
 func get_dial_code() -> String:
+	#TODO : This can be optimized 
 	var result = ""
 	if $ShapeCircle.visible:
 		result += "CI"

@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://b86lnp2c2ghsx"
+path="res://.godot/imported/puzzle_small_circle_triangle.dialogue-bfff764dfb4a12d76045dafeb61a6058.tres"
+
+[deps]
+
+source_file="res://dialogues/puzzle_small_circle_triangle.dialogue"
+dest_files=["res://.godot/imported/puzzle_small_circle_triangle.dialogue-bfff764dfb4a12d76045dafeb61a6058.tres"]
+
+[params]
+
+defaults=true

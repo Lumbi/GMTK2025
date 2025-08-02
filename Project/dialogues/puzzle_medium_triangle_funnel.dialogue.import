@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://dgpcu86vqmq56"
+path="res://.godot/imported/puzzle_medium_triangle_funnel.dialogue-e19d0573dc920da1ba0d355939c74ded.tres"
+
+[deps]
+
+source_file="res://dialogues/puzzle_medium_triangle_funnel.dialogue"
+dest_files=["res://.godot/imported/puzzle_medium_triangle_funnel.dialogue-e19d0573dc920da1ba0d355939c74ded.tres"]
+
+[params]
+
+defaults=true

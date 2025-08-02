@@ -1,0 +1,34 @@
+[gd_scene load_steps=3 format=3 uid="uid://cuwvo1as8oidn"]
+
+[ext_resource type="PackedScene" uid="uid://bhubpcvphim6a" path="res://levels/switchboard.tscn" id="1_5it14"]
+[ext_resource type="PackedScene" uid="uid://beryfgbw458pm" path="res://prefabs/SwitchboardSocket.tscn" id="2_n64xj"]
+
+[node name="YearSwitchboard" type="Node2D"]
+
+[node name="Switchboard" parent="." instance=ExtResource("1_5it14")]
+
+[node name="SwitchboardSockets" type="Node2D" parent="Switchboard"]
+unique_name_in_owner = true
+
+[node name="SwitchboardSocket" parent="Switchboard/SwitchboardSockets" instance=ExtResource("2_n64xj")]
+position = Vector2(332, 145)
+
+[node name="SwitchboardSocket2" parent="Switchboard/SwitchboardSockets" instance=ExtResource("2_n64xj")]
+position = Vector2(494, 145)
+shape = 1
+
+[node name="SwitchboardSocket3" parent="Switchboard/SwitchboardSockets" instance=ExtResource("2_n64xj")]
+position = Vector2(650, 145)
+shape = 2
+
+[node name="SwitchboardSocket4" parent="Switchboard/SwitchboardSockets" instance=ExtResource("2_n64xj")]
+position = Vector2(332, 298)
+shape = 3
+
+[node name="SwitchboardSocket5" parent="Switchboard/SwitchboardSockets" instance=ExtResource("2_n64xj")]
+position = Vector2(494, 298)
+shape = 4
+
+[node name="SwitchboardSocket6" parent="Switchboard/SwitchboardSockets" instance=ExtResource("2_n64xj")]
+position = Vector2(650, 298)
+shape = 5

@@ -77,7 +77,7 @@ func _ready() -> void:
 
 # remove physics
 func freeze() -> void:
-	await get_tree().create_timer(1).timeout
+	await get_tree().create_timer(0.2).timeout
 	for segment in segments:
 		segment.set_deferred("freeze", true)
 

@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://bhubpcvphim6a"]
 
 [ext_resource type="Script" uid="uid://dftdvdemha1o2" path="res://scripts/switchboard_manager.gd" id="1_0udp6"]
-[ext_resource type="PackedScene" uid="uid://beryfgbw458pm" path="res://prefabs/SwitchboardSocket.tscn" id="1_7oc7i"]
 [ext_resource type="PackedScene" uid="uid://ttq13tvt5bes" path="res://prefabs/shape_dial.tscn" id="2_0udp6"]
+[ext_resource type="Script" uid="uid://b07l8wi7m5yh2" path="res://scripts/audio_stationmanager.gd" id="4_33n3u"]
 
 [node name="Switchboard" type="Node2D"]
 script = ExtResource("1_0udp6")
@@ -10,31 +10,9 @@ script = ExtResource("1_0udp6")
 [node name="ShapeDial" parent="." instance=ExtResource("2_0udp6")]
 position = Vector2(998, 150)
 
-[node name="SwitchboardSockets" type="Node2D" parent="."]
-
-[node name="SwitchboardSocket" parent="SwitchboardSockets" instance=ExtResource("1_7oc7i")]
-position = Vector2(332, 145)
-
-[node name="SwitchboardSocket2" parent="SwitchboardSockets" instance=ExtResource("1_7oc7i")]
-position = Vector2(494, 145)
-shape = 1
-
-[node name="SwitchboardSocket3" parent="SwitchboardSockets" instance=ExtResource("1_7oc7i")]
-position = Vector2(650, 145)
-shape = 2
-
-[node name="SwitchboardSocket4" parent="SwitchboardSockets" instance=ExtResource("1_7oc7i")]
-position = Vector2(332, 298)
-shape = 3
-
-[node name="SwitchboardSocket5" parent="SwitchboardSockets" instance=ExtResource("1_7oc7i")]
-position = Vector2(494, 298)
-shape = 4
-
-[node name="SwitchboardSocket6" parent="SwitchboardSockets" instance=ExtResource("1_7oc7i")]
-position = Vector2(650, 298)
-shape = 5
-
 [node name="FirstWireSpawnPoint" type="Node2D" parent="."]
 unique_name_in_owner = true
 position = Vector2(253, 202)
+
+[node name="AudioStationManager" type="Node2D" parent="."]
+script = ExtResource("4_33n3u")

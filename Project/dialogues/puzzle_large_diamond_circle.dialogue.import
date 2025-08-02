@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://8tu7twg3mler"
+path="res://.godot/imported/puzzle_large_diamond_circle.dialogue-16c1fb2e6f9fb1f4744d018f21cbf052.tres"
+
+[deps]
+
+source_file="res://dialogues/puzzle_large_diamond_circle.dialogue"
+dest_files=["res://.godot/imported/puzzle_large_diamond_circle.dialogue-16c1fb2e6f9fb1f4744d018f21cbf052.tres"]
+
+[params]
+
+defaults=true
