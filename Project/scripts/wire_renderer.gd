@@ -7,3 +7,5 @@ func set_points(points:Array[Vector2]):
 	for p in points:
 		line2d.add_point(p)
 	
+func set_color(color:Color):
+	line2d.default_color = color

@@ -10,6 +10,7 @@
 shader = ExtResource("2_ydev4")
 shader_parameter/image = ExtResource("3_ydev4")
 shader_parameter/noiseTex = SubResource("NoiseTexture2D_oo4wj")
+shader_parameter/shadowColor = Color(0.407857, 0.335576, 0.227423, 1)
 
 [node name="WireRenderer" type="Node2D"]
 script = ExtResource("1_kld82")
@@ -17,6 +18,8 @@ script = ExtResource("1_kld82")
 [node name="Line2D" type="Line2D" parent="."]
 material = SubResource("ShaderMaterial_oo4wj")
 points = PackedVector2Array(15, 62, 106, 153, 126, 182, 195, 218, 528, 109)
+width = 15.0
+default_color = Color(0.869291, 0.000494977, 0.847676, 1)
 texture_mode = 1
 joint_mode = 1
 begin_cap_mode = 2
