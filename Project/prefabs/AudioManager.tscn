@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://de6bydf3joeov"]
+
+[node name="AudioManager" type="Node2D"]
+
+[node name="Ambince" type="AudioStreamPlayer2D" parent="."]
+
+[node name="Music" type="AudioStreamPlayer2D" parent="."]
