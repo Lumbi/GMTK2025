@@ -16,19 +16,20 @@ shapeStations_filename_to_key = Dictionary[String, String]({
 
 [node name="SwitchboardSockets" type="Node2D" parent="Switchboard"]
 unique_name_in_owner = true
+position = Vector2(199, 50)
 
 [node name="SwitchboardSocket" parent="Switchboard/SwitchboardSockets" instance=ExtResource("2_b6n40")]
-position = Vector2(332, 145)
+position = Vector2(49, 145)
 shape = 5
 
 [node name="SwitchboardSocket2" parent="Switchboard/SwitchboardSockets" instance=ExtResource("2_b6n40")]
-position = Vector2(494, 145)
+position = Vector2(198, 145)
 shape = 4
 
 [node name="SwitchboardSocket3" parent="Switchboard/SwitchboardSockets" instance=ExtResource("2_b6n40")]
-position = Vector2(491, 298)
+position = Vector2(538, 145)
 shape = 2
 
 [node name="SwitchboardSocket4" parent="Switchboard/SwitchboardSockets" instance=ExtResource("2_b6n40")]
-position = Vector2(332, 298)
+position = Vector2(379, 145)
 shape = 1
