@@ -3,6 +3,7 @@ extends Node2D
 @onready var line2d: Line2D = $Line2D
 @onready var plug:Node2D = $plug
 @onready var plug_frist_point:Node2D = $plug/plug_first_point
+@onready var plug_plugged:Node2D = $plug_plugged
 
 @export var colors:Array[Color]
 
@@ -13,6 +14,12 @@ func set_plug_position():
 	
 func _process(delta: float) -> void:
 	set_plug_position()
+	
+	
+func plug_wire():
+	plug_plugged.visible = true
+	plug_plugged.global_position = line2d.points[line2d.points.size()-1]
+	plug.visible = false
 	
 func _ready() -> void:
 	set_random_color()
