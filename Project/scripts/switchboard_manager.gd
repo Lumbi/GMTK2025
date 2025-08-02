@@ -3,24 +3,44 @@ extends Node2D
 var switchboard_socket_scene = preload("res://prefabs/SwitchboardSocket.tscn")
 var wire_prefab = preload("res://prefabs/Wire.tscn")
 var socket_spacing = 140  # Distance between sockets
-var start_pos :Vector2
+
+@export var rows : int = 3
+@export var cols : int = 3
+@export var max_connections : int = 3
 
 var current_wire
 var active_socketid : int = -1
-var rows : int = 3
-var cols : int = 3
-var switchboard_socket_nodes: Array = []
 var switchboard_scoekt_active_nodes : Array[Dictionary] = []
+var switchboard_sockets : Array = []
+var shape_dial : Node
+
+var shapes : Array[Texture2D] = []
 
 func _ready():
-	# Set start_pos to the center of the window
-	start_pos = get_viewport().get_visible_rect().size / 2
-	spawn_switchboard_grid()
+	#spawn_switchboard_grid()
+	shape_dial = $ShapeDial
+	# Collect all SwitchboardSocket children
+	collect_switchboard_sockets()
 	
 	# spawn the first wire
 	spawn_wire(Vector2(100, 100))
 
+func collect_switchboard_sockets():
+	var switchboard_sockets_node = get_node("SwitchboardSockets")
+	switchboard_sockets = switchboard_sockets_node.get_children()
+	var index = 0
+	for socket_instance in switchboard_sockets:
+		# Connect the input button signal to the manager
+		socket_instance.get_node("InputSocket/InputButton").button_down.connect(_on_socket_input_button_down.bind(socket_instance))
+		socket_instance.get_node("OutputSocket/OutputButton").button_down.connect(_on_socket_output_button_down.bind(socket_instance))
+		socket_instance.socketid = index
+		index += 1 
+		
+
+
 func spawn_switchboard_grid():
+	# Set start_pos to the center of the window
+	var start_pos = get_viewport().get_visible_rect().size / 2
 	# Spawn a 3x3 grid of switchboard sockets
 	for row in range(rows):
 		for col in range(cols):
@@ -39,7 +59,7 @@ func spawn_switchboard_grid():
 			
 			# Optionally name each socket for easier identification
 			socket_instance.name = "SwitchboardSocket_" + str(row) + "_" + str(col)
-			switchboard_socket_nodes.append(socket_instance)
+			switchboard_sockets.append(socket_instance)
 
 func _process(_delta: float) -> void:
 	# move the current wire's end to mouse position
@@ -56,11 +76,16 @@ func on_socket_connected(socket: Node) -> void:
 		current_wire.freeze()
 		current_wire = null
 		spawn_wire(output_socket.global_position)
+		shape_dial.toggle_shape(socket.shape)
+	if switchboard_scoekt_active_nodes.size() >= max_connections:
+		max_connections_reached()
 
 func on_socket_disconected(_socket: Node) -> void:
 	var last_wire_pair = switchboard_scoekt_active_nodes.pop_back() #previous wire 
 	if last_wire_pair != null:
 		var wire = last_wire_pair["wire"]
+		var socket = last_wire_pair["socket"]
+		shape_dial.toggle_shape(socket.shape)
 		current_wire.queue_free()
 		current_wire = wire
 		wire.unfreeze()
@@ -70,6 +95,8 @@ func on_socket_disconected(_socket: Node) -> void:
 			active_socketid = previous_node["socket"].socketid
 		else:
 			active_socketid = -1
+	if switchboard_scoekt_active_nodes.size() < max_connections:
+		max_connections_unreached()
 
 func spawn_wire(spawn_position: Vector2) -> void:
 	if not current_wire:
@@ -78,7 +105,7 @@ func spawn_wire(spawn_position: Vector2) -> void:
 		add_child(current_wire)
 
 func _on_socket_input_button_down(socket: Node):
-	if is_already_connected(socket) == false:
+	if is_already_connected(socket) == false and switchboard_scoekt_active_nodes.size() < max_connections:
 		on_socket_connected(socket)
 		socket.swap_to_connected_socket()
 		active_socketid = socket.socketid
@@ -94,3 +121,11 @@ func is_already_connected(scoket : Node):
 		if scoket == previous_socket:
 			return true
 	return false
+
+func max_connections_reached():
+	for switchboard_socket in switchboard_sockets:
+		switchboard_socket.mark_as_max_connection_reached()
+
+func max_connections_unreached():
+	for switchboard_socket in switchboard_sockets:
+		switchboard_socket.mark_as_max_connection_unreached()

@@ -1,27 +1,18 @@
 extends Node2D
 
-enum Shape
-{
-	CIRCLE,
-	CONE,
-	CROSS,
-	DIAMOND,
-	FUNNEL,
-	SQUARE
-}
 
 func get_sprite(shape) -> Sprite2D:
 	match shape:
-		Shape.CIRCLE: return $ShapeCircle
-		Shape.CONE: return $ShapeCone
-		Shape.CROSS: return $ShapeCross
-		Shape.DIAMOND: return $ShapeDiamond
-		Shape.FUNNEL: return $ShapeFunnel
-		Shape.SQUARE: return $ShapeSquare
+		Global.Shape.CIRCLE: return $ShapeCircle
+		Global.Shape.CONE: return $ShapeCone
+		Global.Shape.CROSS: return $ShapeCross
+		Global.Shape.DIAMOND: return $ShapeDiamond
+		Global.Shape.FUNNEL: return $ShapeFunnel
+		Global.Shape.SQUARE: return $ShapeSquare
 	return null
 
 # pass the Shape enum
-func toggle(shape) -> void:
+func toggle_shape(shape) -> void:
 	var sprite = get_sprite(shape)
 	sprite.visible = !sprite.visible
 
