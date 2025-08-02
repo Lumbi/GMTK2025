@@ -12,7 +12,7 @@ var socket_spacing = 140  # Distance between sockets
 
 var current_wire
 var active_socketid : int = -1
-var switchboard_scoekt_active_nodes : Array[Dictionary] = []
+var switchboard_active_socket_nodes : Array[Dictionary] = []
 var switchboard_sockets : Array = []
 var shape_dial : Node
 var audio_dialogstation : Node
@@ -24,9 +24,27 @@ func _ready():
 	audio_dialogstation = $AudioStationManager
 	# Collect all SwitchboardSocket children
 	collect_switchboard_sockets()
-	
+
+func activate():
 	# spawn the first wire
 	spawn_wire(%FirstWireSpawnPoint.global_position)
+
+func reset():
+	active_socketid = -1
+	# free current wire
+	if current_wire:
+		current_wire.queue_free()
+	# free all other active wires
+	for active_socket_node in switchboard_active_socket_nodes:
+		var wire = active_socket_node["wire"]
+		if wire: wire.queue_free()
+	# reset all sockets
+	for socket in switchboard_sockets:
+		if socket: socket.reset()
+	# clear active sockets
+	switchboard_active_socket_nodes.clear()
+	# reset shape dial
+	$ShapeDial.reset()
 
 func collect_switchboard_sockets():
 	var switchboard_sockets_node = %SwitchboardSockets
@@ -79,17 +97,17 @@ func on_socket_connected(socket: Node) -> void:
 	var output_socket = socket.output_socket_node
 	if current_wire:
 		current_wire.move_end_to(input_socket.global_position)
-		switchboard_scoekt_active_nodes.append({"socket": socket, "wire": current_wire})
+		switchboard_active_socket_nodes.append({"socket": socket, "wire": current_wire})
 		current_wire.freeze()
 		current_wire = null
 		spawn_wire(output_socket.global_position)
 		shape_dial.toggle_shape(socket.shape)
 	audio_dialogstation.try_to_start_audio()
-	if switchboard_scoekt_active_nodes.size() >= max_connections:
+	if switchboard_active_socket_nodes.size() >= max_connections:
 		max_connections_reached()
 
 func on_socket_disconected(_socket: Node) -> void:
-	var last_wire_pair = switchboard_scoekt_active_nodes.pop_back() #previous wire 
+	var last_wire_pair = switchboard_active_socket_nodes.pop_back() #previous wire 
 	if last_wire_pair != null:
 		var wire = last_wire_pair["wire"]
 		var socket = last_wire_pair["socket"]
@@ -97,13 +115,13 @@ func on_socket_disconected(_socket: Node) -> void:
 		current_wire.queue_free()
 		current_wire = wire
 		wire.unfreeze()
-	if !switchboard_scoekt_active_nodes.is_empty(): 
-		var previous_node = switchboard_scoekt_active_nodes.back()
+	if !switchboard_active_socket_nodes.is_empty(): 
+		var previous_node = switchboard_active_socket_nodes.back()
 		if previous_node:
 			active_socketid = previous_node["socket"].socketid
 		else:
 			active_socketid = -1
-	if switchboard_scoekt_active_nodes.size() < max_connections:
+	if switchboard_active_socket_nodes.size() < max_connections:
 		max_connections_unreached()
 
 func spawn_wire(spawn_position: Vector2) -> void:
@@ -113,7 +131,7 @@ func spawn_wire(spawn_position: Vector2) -> void:
 		current_wire.global_position = spawn_position
 
 func _on_socket_input_button_down(socket: Node):
-	if is_already_connected(socket) == false and switchboard_scoekt_active_nodes.size() < max_connections:
+	if is_already_connected(socket) == false and switchboard_active_socket_nodes.size() < max_connections:
 		on_socket_connected(socket)
 		socket.swap_to_connected_socket()
 		active_socketid = socket.socketid
@@ -124,7 +142,7 @@ func _on_socket_output_button_down(socket: Node):
 		socket.swap_to_unconnected_socket()
 
 func is_already_connected(scoket : Node):
-	for socket_wire_pair in switchboard_scoekt_active_nodes:
+	for socket_wire_pair in switchboard_active_socket_nodes:
 		var previous_socket = socket_wire_pair["socket"]
 		if scoket == previous_socket:
 			return true

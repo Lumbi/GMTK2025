@@ -11,6 +11,11 @@ func get_sprite(shape) -> Sprite2D:
 		Global.Shape.SQUARE: return $ShapeSquare
 	return null
 
+func reset():
+	var shapes = find_children("Shape*")
+	for shape in shapes:
+		shape.visible = false
+
 # pass the Shape enum
 func toggle_shape(shape) -> void:
 	var sprite = get_sprite(shape)

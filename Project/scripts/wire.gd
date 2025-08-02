@@ -1,3 +1,4 @@
+class_name Wire
 extends Node2D
 
 var wire_segment_prefab = preload("res://prefabs/WireSegment.tscn")

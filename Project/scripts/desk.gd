@@ -10,6 +10,7 @@ func _on_month_switchboard_button_pressed() -> void:
 	
 func _on_year_switchboard_button_pressed() -> void:
 	zoom_to($YearZoomTarget.global_position)
+	$YearSwitchboard/Switchboard.activate()
 	pass
 
 func _on_input_button_pressed() -> void:
@@ -26,5 +27,7 @@ func zoom_to(_position) -> void:
 	pass
 	
 func zoom_back() -> void:
+	$YearSwitchboard/Switchboard.reset()
+	
 	$Camera2D.zoom_to(0.5, Vector2(0, 0))
 	%ZoomBackButton.visible = false

@@ -28,9 +28,9 @@ enum Shape
 
 enum PuzzleType
 {
-    LARGE,
-    MEDIUM,
-    SMALL
+	LARGE,
+	MEDIUM,
+	SMALL
 }
 
 func get_texture(shape) -> Texture2D:

@@ -22,6 +22,10 @@ func _ready():
 	#randomize Shapes in Switchboard will be be more fun
 	shape_sprite.texture = Global.get_texture(shape)
 
+func reset():
+	is_socket_connected = false
+	$InputSocket.texture = input_socket_not_connected
+	$OutputSocket.texture = output_socket_not_connected
 
 func _on_input_button_mouse_entered():
 	if !is_socket_connected:
