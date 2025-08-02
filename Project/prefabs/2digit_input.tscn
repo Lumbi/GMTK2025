@@ -1,6 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://ks7hrn0lw04d"]
+[gd_scene load_steps=3 format=3 uid="uid://vgi51wagrca6"]
 
-[ext_resource type="PackedScene" uid="uid://cdlwyfc1ftd6v" path="res://prefabs/digit_input.tscn" id="1_uthap"]
+[ext_resource type="PackedScene" path="res://prefabs/digit_input.tscn" id="1_uthap"]
 [ext_resource type="Script" uid="uid://4uecrbl36ybk" path="res://scripts/multi_digit_input.gd" id="1_wbo0m"]
 
 [node name="2DigitInput" type="Control"]
@@ -9,7 +9,8 @@ layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_wbo0m")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
+[node name="DigitContainer" type="HBoxContainer" parent="."]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -19,8 +20,8 @@ offset_bottom = 156.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Digit1" parent="HBoxContainer" instance=ExtResource("1_uthap")]
+[node name="Digit1" parent="DigitContainer" instance=ExtResource("1_uthap")]
 layout_mode = 2
 
-[node name="Digit2" parent="HBoxContainer" instance=ExtResource("1_uthap")]
+[node name="Digit2" parent="DigitContainer" instance=ExtResource("1_uthap")]
 layout_mode = 2

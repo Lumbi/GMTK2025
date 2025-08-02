@@ -5,7 +5,8 @@ var value: int
 var digit_nodes = []
 
 func _ready():
-	digit_nodes = find_children("*", "DigitInput")
+	var digits_container = %DigitContainer
+	digit_nodes = digits_container.get_children()
 	digit_nodes.reverse()
 	pass
 

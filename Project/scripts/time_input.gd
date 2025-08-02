@@ -1,9 +1,9 @@
 extends Control
 
 # TODO SET THE RIGHT VALUES!!
-var answer_year = 2025
-var answer_month = 01
-var answer_day = 01
+var answer_year = 1955
+var answer_month = 09
+var answer_day = 03
 
 func _on_confirm_button_pressed() -> void:
 	var input_year = %YearInput.get_value()

@@ -4,10 +4,10 @@
 [ext_resource type="Script" uid="uid://c617b1gh5fxtl" path="res://scripts/camera_2d.gd" id="2_0jnev"]
 [ext_resource type="PackedScene" uid="uid://cot4gmg4qs8lb" path="res://prefabs/time_input_control.tscn" id="2_ex12m"]
 [ext_resource type="Script" path="res://scripts/click_area_button.gd" id="2_i17aw"]
-[ext_resource type="PackedScene" uid="uid://cuwvo1as8oidn" path="res://levels/year_switchboard.tscn" id="5_i17aw"]
+[ext_resource type="PackedScene" uid="uid://cuwvo1as8oidn" path="res://prefabs/year_switchboard.tscn" id="5_i17aw"]
 [ext_resource type="Texture2D" uid="uid://biqubfmdgnskd" path="res://textures/desk_bg.png" id="5_j0jvf"]
-[ext_resource type="PackedScene" uid="uid://bsb0hmho24r76" path="res://levels/month_switchboard.tscn" id="7_50fcr"]
-[ext_resource type="PackedScene" uid="uid://bxo3obomatb5r" path="res://levels/day_switchboard.tscn" id="8_1cuu8"]
+[ext_resource type="PackedScene" uid="uid://bsb0hmho24r76" path="res://prefabs/month_switchboard.tscn" id="7_50fcr"]
+[ext_resource type="PackedScene" uid="uid://bxo3obomatb5r" path="res://prefabs/day_switchboard.tscn" id="8_1cuu8"]
 
 [node name="Desk" type="Node2D"]
 script = ExtResource("1_b51fv")
