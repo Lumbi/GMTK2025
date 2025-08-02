@@ -4,6 +4,10 @@ extends Node2D
 
 @export var colors:Array[Color]
 
+
+func _ready() -> void:
+	set_random_color()
+
 func set_points(points:Array[Vector2]):
 	line2d.clear_points()
 	for p in points:
