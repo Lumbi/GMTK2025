@@ -1,6 +1,5 @@
 extends Node2D
 
-
 var start_offset: Vector2
 var camera:Camera2D
 
