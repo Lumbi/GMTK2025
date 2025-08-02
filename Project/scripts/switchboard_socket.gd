@@ -47,6 +47,10 @@ func swap_to_connected_socket():
 	input_socket_node.texture = input_socket_connected
 	output_socket_node.texture = output_socket_connected
 
+func swap_to_connected_socket_but_not_current_active():
+	input_socket_node.texture = input_socket_connected
+	output_socket_node.texture = output_socket_not_connected
+
 func swap_to_unconnected_socket():
 	is_socket_connected = false
 	input_socket_node.texture = input_socket_not_connected

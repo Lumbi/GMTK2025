@@ -8,13 +8,11 @@
 script = ExtResource("1_0udp6")
 
 [node name="ShapeDial" parent="." instance=ExtResource("2_0udp6")]
+unique_name_in_owner = true
 position = Vector2(998, 150)
 
-[node name="FirstWireSpawnPoint" type="Node2D" parent="."]
-unique_name_in_owner = true
-position = Vector2(253, 202)
-
 [node name="AudioStationManager" type="Node2D" parent="."]
+unique_name_in_owner = true
 script = ExtResource("4_33n3u")
 
 [node name="DialogPlayer" type="AudioStreamPlayer2D" parent="AudioStationManager"]
