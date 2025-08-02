@@ -36,13 +36,15 @@ texture = ExtResource("5_ekegu")
 visible = false
 texture = ExtResource("6_efm0y")
 
-[node name="DebugLabel" type="Label" parent="."]
-visible = false
-offset_left = -99.0
-offset_top = 108.0
-offset_right = -49.0
-offset_bottom = 131.0
-text = "Debug"
+[node name="Hint" type="Label" parent="."]
+offset_left = -112.857
+offset_top = -54.2857
+offset_right = 112.143
+offset_bottom = 41.7143
+theme_override_font_sizes/font_size = 58
+text = "DAY"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Screen" type="Sprite2D" parent="."]
 modulate = Color(0, 0, 0, 1)

@@ -22,6 +22,8 @@ var shapes : Array[Texture2D] = []
 func _ready():
 	shape_dial = $ShapeDial
 	audio_dialogstation = $AudioStationManager
+	var date_type = Global.get_puzzletype_to_date(puzzleType)
+	shape_dial.set_hint_text(date_type)
 	# Collect all SwitchboardSocket children
 	collect_switchboard_sockets()
 
