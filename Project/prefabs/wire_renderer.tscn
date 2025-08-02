@@ -1,0 +1,24 @@
+[gd_scene load_steps=6 format=3 uid="uid://bborvgohyh1ch"]
+
+[ext_resource type="Script" uid="uid://dymurc7fv1l5i" path="res://scripts/wire_renderer.gd" id="1_kld82"]
+[ext_resource type="Shader" uid="uid://1ojkvyjeqcdr" path="res://Shaders/wire_shader.gdshader" id="2_ydev4"]
+[ext_resource type="Texture2D" uid="uid://c35ttyt215oh4" path="res://textures/checkboard.png" id="3_ydev4"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_oo4wj"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_oo4wj"]
+shader = ExtResource("2_ydev4")
+shader_parameter/image = ExtResource("3_ydev4")
+shader_parameter/noiseTex = SubResource("NoiseTexture2D_oo4wj")
+
+[node name="WireRenderer" type="Node2D"]
+script = ExtResource("1_kld82")
+
+[node name="Line2D" type="Line2D" parent="."]
+material = SubResource("ShaderMaterial_oo4wj")
+position = Vector2(22, -9)
+points = PackedVector2Array(15, 62, 106, 153, 126, 182, 195, 218, 528, 109)
+texture_mode = 1
+joint_mode = 1
+begin_cap_mode = 2
+end_cap_mode = 2
