@@ -6,7 +6,7 @@ var socket_spacing = 140  # Distance between sockets
 
 @export var rows : int = 3
 @export var cols : int = 3
-@export var max_connections : int = 3
+@export var max_connections : int = 2
 @export var puzzleType : Global.PuzzleType = Global.PuzzleType.LARGE
 @export var shapeStations_filename_to_key : Dictionary[String,String] = {}
 
@@ -34,6 +34,7 @@ func reset():
 	# free current wire
 	if current_wire:
 		current_wire.queue_free()
+		current_wire = null
 	# free all other active wires
 	for active_socket_node in switchboard_active_socket_nodes:
 		var wire = active_socket_node["wire"]
@@ -92,9 +93,15 @@ func _process(_delta: float) -> void:
 		delta = delta.limit_length(MAX_WIRE_LENGTH)
 		current_wire.move_end_to(current_wire.global_position + delta)
 
+func check_previous_node_connected_but_not_current_active() -> void:
+	if !switchboard_active_socket_nodes.is_empty(): 
+		var previous_node = switchboard_active_socket_nodes.back()["socket"]
+		previous_node.swap_to_connected_socket_but_not_current_active()
+
 func on_socket_connected(socket: Node) -> void:
 	var input_socket = socket.input_socket_node
 	var output_socket = socket.output_socket_node
+	check_previous_node_connected_but_not_current_active()
 	if current_wire:
 		current_wire.move_end_to(input_socket.global_position)
 		switchboard_active_socket_nodes.append({"socket": socket, "wire": current_wire})
@@ -118,7 +125,9 @@ func on_socket_disconected(_socket: Node) -> void:
 	if !switchboard_active_socket_nodes.is_empty(): 
 		var previous_node = switchboard_active_socket_nodes.back()
 		if previous_node:
-			active_socketid = previous_node["socket"].socketid
+			var previous_socket = previous_node["socket"]
+			active_socketid = previous_socket.socketid
+			previous_socket.swap_to_connected_socket()
 		else:
 			active_socketid = -1
 	if switchboard_active_socket_nodes.size() < max_connections:

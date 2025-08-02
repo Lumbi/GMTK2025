@@ -21,7 +21,7 @@ class ShapeStation:
 var shapeStations : Array[ShapeStation] = []
 
 func _ready():
-	shape_dial = get_node("../ShapeDial")
+	shape_dial = %ShapeDial
 	switchboard_manager = get_node("../../Switchboard")
 	dialog_player = %DialogPlayer
 	print(test_dialogue.get_class())
@@ -62,7 +62,10 @@ func try_to_start_audio():
 
 
 func dialogue_started(resource: DialogueResource):
-	print(shape_dial)
-	
+	pass
+
 func dialogue_ended(resource: DialogueResource):
 	dialog_player.stop()
+	if switchboard_manager.active_socketid >= 0:
+		switchboard_manager.reset()
+		switchboard_manager.activate()

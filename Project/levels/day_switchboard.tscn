@@ -26,3 +26,7 @@ shape = 2
 [node name="SwitchboardSocket3" parent="Switchboard/SwitchboardSockets" instance=ExtResource("2_cdlke")]
 position = Vector2(960, 723)
 shape = 1
+
+[node name="FirstWireSpawnPoint" type="Node2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(796, 695)

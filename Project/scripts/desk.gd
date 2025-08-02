@@ -2,10 +2,12 @@ extends Node2D
 
 func _on_day_switchboard_button_pressed() -> void:
 	zoom_to($DayZoomTarget.global_position)
+	$DaySwitchboard/Switchboard.activate()
 	pass
 
 func _on_month_switchboard_button_pressed() -> void:
 	zoom_to($MonthZoomTarget.global_position)
+	$MonthSwitchboard/Switchboard.activate()
 	pass
 	
 func _on_year_switchboard_button_pressed() -> void:
@@ -29,6 +31,8 @@ func zoom_to(_position) -> void:
 	
 func zoom_back() -> void:
 	$YearSwitchboard/Switchboard.reset()
+	$MonthSwitchboard/Switchboard.reset()
+	$DaySwitchboard/Switchboard.reset()
 	set_click_area_button_active(true)
 	$Camera2D.zoom_to(0.5, Vector2(0, 0))
 	%ZoomBackButton.visible = false
