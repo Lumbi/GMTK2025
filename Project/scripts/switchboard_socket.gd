@@ -6,6 +6,7 @@ extends Node2D
 @export var shape: Global.Shape
 
 var socket_connect_cursor_res = load("res://textures/socket_connect_cursor.png")
+var socket_disconnect_cursor_res = load("res://textures/socket_disconnect_cursor.png")
 var is_socket_connected : bool = false
 var input_socket_node: Sprite2D
 var output_socket_node: Sprite2D
@@ -31,21 +32,15 @@ func _on_input_button_mouse_entered():
 	if !is_socket_connected:
 		Input.set_custom_mouse_cursor(socket_connect_cursor_res)
 
-
 func _on_input_button_mouse_exited():
-	if !is_socket_connected:
-		Input.set_custom_mouse_cursor(null)
-
+	Input.set_custom_mouse_cursor(null)
 
 func _on_output_button_mouse_entered():
 	if is_socket_connected:
-		Input.set_custom_mouse_cursor(socket_connect_cursor_res)
-
+		Input.set_custom_mouse_cursor(socket_disconnect_cursor_res)
 
 func _on_output_button_mouse_exited():
-	if is_socket_connected:
-		Input.set_custom_mouse_cursor(null)
-
+	Input.set_custom_mouse_cursor(null)
 
 func swap_to_connected_socket():
 	is_socket_connected = true
