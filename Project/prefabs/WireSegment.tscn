@@ -5,7 +5,7 @@ size = Vector2(10, 40)
 
 [node name="SegmentRigidBody2D" type="RigidBody2D"]
 collision_layer = 2147483648
-gravity_scale = 0.3
+gravity_scale = 4.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 unique_name_in_owner = true
