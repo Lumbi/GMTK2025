@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://7j5fsof8pcqp"
+path="res://.godot/imported/puzzle_small_cross_triangle.dialogue-aebd44e993ae0ffda73d9e6bd16562c8.tres"
+
+[deps]
+
+source_file="res://dialogues/puzzle_small_cross_triangle.dialogue"
+dest_files=["res://.godot/imported/puzzle_small_cross_triangle.dialogue-aebd44e993ae0ffda73d9e6bd16562c8.tres"]
+
+[params]
+
+defaults=true

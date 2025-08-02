@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://b7pxabyaqk8g7"
+path="res://.godot/imported/puzzle_medium_square_triangle.dialogue-c31a706184dbd1b43f74ff3cb37439a5.tres"
+
+[deps]
+
+source_file="res://dialogues/puzzle_medium_square_triangle.dialogue"
+dest_files=["res://.godot/imported/puzzle_medium_square_triangle.dialogue-c31a706184dbd1b43f74ff3cb37439a5.tres"]
+
+[params]
+
+defaults=true

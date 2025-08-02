@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://6tufsvi2bj65"
+path="res://.godot/imported/puzzle_medium_funnel_square.dialogue-94ed3d3ca06ce1dee7322a1d4478096f.tres"
+
+[deps]
+
+source_file="res://dialogues/puzzle_medium_funnel_square.dialogue"
+dest_files=["res://.godot/imported/puzzle_medium_funnel_square.dialogue-94ed3d3ca06ce1dee7322a1d4478096f.tres"]
+
+[params]
+
+defaults=true

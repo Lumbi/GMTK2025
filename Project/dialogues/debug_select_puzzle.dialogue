@@ -1,0 +1,30 @@
+~ start
+Select dialogue to trigger:
+- small__cross_triangle
+	small__cross_triangle
+- small__circle_cross
+	small__circle_cross
+- small__circle_triangle
+	small__circle_triangle
+- medium__funnel_square
+	medium__funnel_square
+- medium__triangle_funnel  
+	medium__triangle_funnel
+- medium__square_triangle  
+	medium__square_triangle
+- medium__square_cross
+	medium__square_cross
+- large__square_cross
+	large__square_cross
+- large__funnel_diamond
+	large__funnel_diamond
+- large__square_circle
+	large__square_circle
+- large__diamond_circle
+	large__diamond_circle
+- large__funnel_square
+	large__funnel_square
+- large__funnel_circle
+	large__funnel_circle
+- Exit => END
+=> END

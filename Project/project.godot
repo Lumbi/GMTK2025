@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="GMTK2025"
-run/main_scene="uid://c0yrhpggtuifq"
+run/main_scene="uid://bsb0hmho24r76"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -24,9 +24,14 @@ DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 
 settings/addon_root_folder="res://addons/debug_draw_3d"
 
+[dialogue_manager]
+
+editor/translations/update_pot_files_automatically=false
+
 [display]
 
 window/size/resizable=false
+window/stretch/mode="viewport"
 
 [editor_plugins]
 
@@ -34,7 +39,7 @@ enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg")
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://dialogues/test.dialogue")
+locale/translations_pot_files=PackedStringArray("res://dialogues/test.dialogue", "res://dialogues/debug_select_puzzle.dialogue", "res://dialogues/puzzle_large_diamond_circle.dialogue", "res://dialogues/puzzle_large_funnel_circle.dialogue", "res://dialogues/puzzle_large_funnel_diamond.dialogue", "res://dialogues/puzzle_large_funnel_square.dialogue", "res://dialogues/puzzle_large_square_circle.dialogue", "res://dialogues/puzzle_large_square_cross.dialogue", "res://dialogues/puzzle_medium_funnel_square.dialogue", "res://dialogues/puzzle_medium_square_cross.dialogue", "res://dialogues/puzzle_medium_square_triangle.dialogue", "res://dialogues/puzzle_medium_triangle_funnel.dialogue", "res://dialogues/puzzle_small_circle_cross.dialogue", "res://dialogues/puzzle_small_circle_triangle.dialogue", "res://dialogues/puzzle_small_cross_triangle.dialogue", "res://dialogues/puzzle_year_diamond_circle.dialogue", "res://dialogues/puzzle_year_funnel_circle.dialogue", "res://dialogues/puzzle_year_funnel_diamond.dialogue", "res://dialogues/puzzle_year_funnel_square.dialogue", "res://dialogues/puzzle_year_square_circle.dialogue", "res://dialogues/puzzle_year_square_cross.dialogue", "res://dialogues/puzzle_day_cross_triangle.dialogue", "res://dialogues/puzzle_day_circle_cross.dialogue", "res://dialogues/puzzle_day_circle_triangle.dialogue")
 
 [rendering]
 

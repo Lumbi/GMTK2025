@@ -1,11 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://ks7hrn0lw04d"]
+[gd_scene load_steps=3 format=3 uid="uid://ks7hrn0lw04d"]
 
 [ext_resource type="PackedScene" uid="uid://cdlwyfc1ftd6v" path="res://prefabs/digit_input.tscn" id="1_uthap"]
+[ext_resource type="Script" uid="uid://4uecrbl36ybk" path="res://scripts/multi_digit_input.gd" id="1_wbo0m"]
 
 [node name="2DigitInput" type="Control"]
 custom_minimum_size = Vector2(104, 156)
 layout_mode = 3
 anchors_preset = 0
+script = ExtResource("1_wbo0m")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 1

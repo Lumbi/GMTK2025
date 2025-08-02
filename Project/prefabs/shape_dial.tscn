@@ -15,7 +15,7 @@ script = ExtResource("1_st04t")
 visible = false
 texture = ExtResource("1_1fvd2")
 
-[node name="ShapeCone" type="Sprite2D" parent="."]
+[node name="ShapeTriangle" type="Sprite2D" parent="."]
 visible = false
 texture = ExtResource("2_st04t")
 

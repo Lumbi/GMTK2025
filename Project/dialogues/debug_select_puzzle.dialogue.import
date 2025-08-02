@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://bt8sc7b6oxm4y"
+path="res://.godot/imported/debug_select_puzzle.dialogue-7050d40894842124de8d8c1683e31a3c.tres"
+
+[deps]
+
+source_file="res://dialogues/debug_select_puzzle.dialogue"
+dest_files=["res://.godot/imported/debug_select_puzzle.dialogue-7050d40894842124de8d8c1683e31a3c.tres"]
+
+[params]
+
+defaults=true
