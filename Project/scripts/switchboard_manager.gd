@@ -23,7 +23,7 @@ func _ready():
 	collect_switchboard_sockets()
 	
 	# spawn the first wire
-	spawn_wire(Vector2(100, 100))
+	spawn_wire(%FirstWireSpawnPoint.global_position)
 
 func collect_switchboard_sockets():
 	var switchboard_sockets_node = get_node("SwitchboardSockets")
@@ -64,7 +64,7 @@ func spawn_switchboard_grid():
 func _process(_delta: float) -> void:
 	# move the current wire's end to mouse position
 	if current_wire:
-		var mouse_pos = get_viewport().get_mouse_position()
+		var mouse_pos = get_global_mouse_position()
 		var delta = mouse_pos - current_wire.global_position
 		const MAX_WIRE_LENGTH = 700
 		delta = delta.limit_length(MAX_WIRE_LENGTH)
