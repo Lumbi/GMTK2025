@@ -16,3 +16,6 @@ position = Vector2(253, 202)
 
 [node name="AudioStationManager" type="Node2D" parent="."]
 script = ExtResource("4_33n3u")
+
+[node name="DialogPlayer" type="AudioStreamPlayer2D" parent="AudioStationManager"]
+unique_name_in_owner = true

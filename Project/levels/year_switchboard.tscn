@@ -6,6 +6,14 @@
 [node name="YearSwitchboard" type="Node2D"]
 
 [node name="Switchboard" parent="." instance=ExtResource("1_5it14")]
+shapeStations_filename_to_key = Dictionary[String, String]({
+"circle_diamond": "diamond_circle",
+"circle_funnel": "funnel_circle",
+"circle_square": "square_circle",
+"cross_square": "square_cross",
+"diamond_funnel": "funnel_diamond",
+"funnel_square": "funnel_square"
+})
 
 [node name="SwitchboardSockets" type="Node2D" parent="Switchboard"]
 unique_name_in_owner = true

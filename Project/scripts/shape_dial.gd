@@ -4,7 +4,7 @@ extends Node2D
 func get_sprite(shape) -> Sprite2D:
 	match shape:
 		Global.Shape.CIRCLE: return $ShapeCircle
-		Global.Shape.CONE: return $ShapeCone
+		Global.Shape.TRIANGLE: return $ShapeTriangle
 		Global.Shape.CROSS: return $ShapeCross
 		Global.Shape.DIAMOND: return $ShapeDiamond
 		Global.Shape.FUNNEL: return $ShapeFunnel
@@ -15,24 +15,25 @@ func get_sprite(shape) -> Sprite2D:
 func toggle_shape(shape) -> void:
 	var sprite = get_sprite(shape)
 	sprite.visible = !sprite.visible
-	print(get_dial_code())
 
 func get_dial_code() -> String:
 	#TODO : This can be optimized 
 	var result = ""
+	var index = 0
 	if $ShapeCircle.visible:
-		result += "CI"
-	if $ShapeCone.visible:
-		result += "CO"
+		result += "circle_"
+	if $ShapeTriangle.visible:
+		result += "triangle_"
 	if $ShapeCross.visible:
-		result += "CR"
+		result += "cross_"
 	if $ShapeDiamond.visible:
-		result += "DI"
+		result += "diamond_"
 	if $ShapeFunnel.visible:
-		result += "FU"
+		result += "funnel_"
 	if $ShapeSquare.visible:
-		result += "SQ"
-	return result
+		result += "square_"
+	var formanted_result = result.left(result.length() - 1)
+	return formanted_result
 
 func _process(_delta: float) -> void:
 	$DebugLabel.text = get_dial_code()

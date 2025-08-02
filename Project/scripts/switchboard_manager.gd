@@ -7,17 +7,21 @@ var socket_spacing = 140  # Distance between sockets
 @export var rows : int = 3
 @export var cols : int = 3
 @export var max_connections : int = 3
+@export var puzzleType : Global.PuzzleType = Global.PuzzleType.LARGE
+@export var shapeStations_filename_to_key : Dictionary[String,String] = {}
 
 var current_wire
 var active_socketid : int = -1
 var switchboard_scoekt_active_nodes : Array[Dictionary] = []
 var switchboard_sockets : Array = []
 var shape_dial : Node
+var audio_dialogstation : Node
 
 var shapes : Array[Texture2D] = []
 
 func _ready():
 	shape_dial = $ShapeDial
+	audio_dialogstation = $AudioStationManager
 	# Collect all SwitchboardSocket children
 	collect_switchboard_sockets()
 	
@@ -80,6 +84,7 @@ func on_socket_connected(socket: Node) -> void:
 		current_wire = null
 		spawn_wire(output_socket.global_position)
 		shape_dial.toggle_shape(socket.shape)
+	audio_dialogstation.try_to_start_audio()
 	if switchboard_scoekt_active_nodes.size() >= max_connections:
 		max_connections_reached()
 
