@@ -88,4 +88,5 @@ layout_mode = 2
 theme = ExtResource("1_v6p8y")
 text = "Exit"
 
+[connection signal="pressed" from="MainButtonsContainer/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="MainButtonsContainer/ExitButton" to="." method="_on_exit_button_pressed"]
