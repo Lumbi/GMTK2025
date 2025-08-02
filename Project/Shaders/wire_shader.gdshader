@@ -30,7 +30,7 @@ void fragment() {
 	box = sdRoundedBox(uv, vec2(.25,.25), vec4(0.1,.1,.1,.1));
 	box = step(box,.2) * (1. - uv.y);
 	float alpha = smoothstep(0.48,0.52,box);
-	
+
 	//vec2 dir = normalize( vec2(dFdx(UV.x),dFdy(UV.y))/fwidth(UV));
 	//COLOR = vec4(dir,0,1);
 	COLOR = vec4(box,box,box,alpha);
