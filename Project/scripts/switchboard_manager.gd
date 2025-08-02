@@ -145,7 +145,7 @@ func spawn_wire(spawn_position: Vector2) -> void:
 		current_wire = wire_prefab.instantiate()
 		add_child(current_wire)
 		current_wire.global_position = spawn_position
-		current_wire.enable_first_point_plug()
+		current_wire.wire_renderer.enable_first_point_plug()
 
 func _on_socket_input_button_down(socket: Node):
 	if current_wire:
