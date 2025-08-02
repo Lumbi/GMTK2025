@@ -73,6 +73,7 @@ func _ready() -> void:
 	
 	wire_renderer = wire_renderer_scene.instantiate()
 	add_sibling(wire_renderer)
+	wire_renderer.global_position = Vector2(0, 0)
 
 # remove physics
 func freeze() -> void:
