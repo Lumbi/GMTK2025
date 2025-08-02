@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://bxo3obomatb5r"]
+
+[ext_resource type="PackedScene" uid="uid://bhubpcvphim6a" path="res://levels/switchboard.tscn" id="1_6ggwg"]
+[ext_resource type="PackedScene" uid="uid://beryfgbw458pm" path="res://prefabs/SwitchboardSocket.tscn" id="2_cdlke"]
+
+[node name="DaySwitchboard" type="Node2D"]
+
+[node name="Switchboard" parent="." instance=ExtResource("1_6ggwg")]
+puzzleType = 2
+shapeStations_filename_to_key = Dictionary[String, String]({
+"circle_cross": "circle_cross",
+"triangle_circle": "circle_triangle",
+"triangle_cross": "cross_triangle"
+})
+
+[node name="SwitchboardSockets" type="Node2D" parent="Switchboard"]
+unique_name_in_owner = true
+
+[node name="SwitchboardSocket" parent="Switchboard/SwitchboardSockets" instance=ExtResource("2_cdlke")]
+position = Vector2(332, 145)
+
+[node name="SwitchboardSocket2" parent="Switchboard/SwitchboardSockets" instance=ExtResource("2_cdlke")]
+position = Vector2(494, 145)
+shape = 2
+
+[node name="SwitchboardSocket3" parent="Switchboard/SwitchboardSockets" instance=ExtResource("2_cdlke")]
+position = Vector2(413, 289)
+shape = 1

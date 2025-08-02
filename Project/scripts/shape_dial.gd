@@ -30,7 +30,7 @@ func get_dial_code() -> String:
 		result += "diamond_"
 	if $ShapeFunnel.visible:
 		result += "funnel_"
-	if $ShapeSquare.visible:
+	if $ShapeSquare.visible:		
 		result += "square_"
 	var formanted_result = result.left(result.length() - 1)
 	return formanted_result
