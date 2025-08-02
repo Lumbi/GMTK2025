@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="GMTK2025"
-run/main_scene="uid://bsb0hmho24r76"
+run/main_scene="uid://c0yrhpggtuifq"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -30,6 +30,7 @@ editor/translations/update_pot_files_automatically=false
 
 [display]
 
+window/size/resizable=false
 window/stretch/mode="viewport"
 
 [editor_plugins]
