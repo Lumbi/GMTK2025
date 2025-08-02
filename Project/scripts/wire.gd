@@ -2,7 +2,7 @@ extends Node2D
 
 var wire_segment_prefab = preload("res://prefabs/WireSegment.tscn")
 
-var segment_pair_count = 6
+var segment_pair_count = 8
 var spacing = 20
 var segments = []
 const DRAW_COLOR = Color.GREEN
