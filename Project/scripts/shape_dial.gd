@@ -15,6 +15,7 @@ func reset():
 	var shapes = find_children("Shape*")
 	for shape in shapes:
 		shape.visible = false
+	$Hint.visible = true
 
 # pass the Shape enum
 func toggle_shape(shape) -> void:
@@ -38,8 +39,15 @@ func get_dial_code() -> String:
 	if $ShapeSquare.visible:		
 		result += "square_"
 	var formanted_result = result.left(result.length() - 1)
+
+	if formanted_result != "":
+		$Hint.visible = false
+	else:
+		$Hint.visible = true
 	return formanted_result
 
 func _process(_delta: float) -> void:
-	$DebugLabel.text = get_dial_code()
 	pass
+
+func set_hint_text(input_text: String):
+	$Hint.text = input_text

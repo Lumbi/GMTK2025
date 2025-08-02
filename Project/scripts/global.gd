@@ -42,10 +42,17 @@ func get_texture(shape) -> Texture2D:
 		Global.Shape.FUNNEL: return shape_funnel
 		Global.Shape.SQUARE: return shape_square
 	return null
-
-func get_puzzletype(puzzletype) -> String:
+	
+func get_puzzletype(puzzletype : Global.PuzzleType) -> String:
 	match puzzletype:
 		Global.PuzzleType.LARGE: return "large"
 		Global.PuzzleType.MEDIUM: return "medium"
 		Global.PuzzleType.SMALL: return "small"
+	return ""
+
+func get_puzzletype_to_date(puzzletype: Global.PuzzleType) -> String:
+	match puzzletype:
+		Global.PuzzleType.LARGE: return "Year"
+		Global.PuzzleType.MEDIUM: return "Month"
+		Global.PuzzleType.SMALL: return "Day"
 	return ""

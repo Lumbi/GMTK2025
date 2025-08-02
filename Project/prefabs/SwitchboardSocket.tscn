@@ -11,6 +11,7 @@ script = ExtResource("1_cp8un")
 [node name="InputSocket" type="Sprite2D" parent="."]
 scale = Vector2(0.15, 0.15)
 texture = ExtResource("2_xftaj")
+offset = Vector2(0, 180)
 
 [node name="InputButton" type="Button" parent="InputSocket"]
 anchors_preset = -1
@@ -37,6 +38,7 @@ horizontal_alignment = 1
 position = Vector2(70, 0)
 scale = Vector2(0.15, 0.15)
 texture = ExtResource("3_3e83u")
+offset = Vector2(0, 180)
 
 [node name="OutputButton" type="Button" parent="OutputSocket"]
 anchors_preset = -1

@@ -16,9 +16,9 @@ script = ExtResource("1_b51fv")
 follow_viewport_enabled = true
 
 [node name="TimeInput" parent="CanvasLayer" instance=ExtResource("2_ex12m")]
-offset_left = 517.0
+offset_left = 915.0
 offset_top = -412.0
-offset_right = 517.0
+offset_right = 915.0
 offset_bottom = -412.0
 
 [node name="MonthSwitchboardButton" type="Button" parent="CanvasLayer"]
@@ -50,9 +50,9 @@ script = ExtResource("2_i17aw")
 
 [node name="InputClickAreaButton" type="Button" parent="CanvasLayer"]
 unique_name_in_owner = true
-offset_left = 523.0
+offset_left = 866.0
 offset_top = -494.0
-offset_right = 871.0
+offset_right = 1214.0
 offset_bottom = 349.0
 flat = true
 script = ExtResource("2_i17aw")
@@ -73,16 +73,16 @@ zoom = Vector2(0.5, 0.5)
 script = ExtResource("2_0jnev")
 
 [node name="MonthZoomTarget" type="Node2D" parent="."]
-position = Vector2(-51, -481)
+position = Vector2(128, -473)
 
 [node name="DayZoomTarget" type="Node2D" parent="."]
-position = Vector2(-673, -224)
+position = Vector2(-631, -198)
 
 [node name="YearZoomTarget" type="Node2D" parent="."]
-position = Vector2(135, -90)
+position = Vector2(162, -41)
 
 [node name="InputZoomTarget" type="Node2D" parent="."]
-position = Vector2(646, -82)
+position = Vector2(1045, -120)
 
 [node name="DeskBg" type="Sprite2D" parent="."]
 position = Vector2(26, 21)
