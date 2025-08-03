@@ -1,9 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://bxo3obomatb5r"]
+[gd_scene load_steps=4 format=3 uid="uid://bxo3obomatb5r"]
 
 [ext_resource type="PackedScene" uid="uid://bhubpcvphim6a" path="res://levels/switchboard.tscn" id="1_6ggwg"]
 [ext_resource type="PackedScene" uid="uid://beryfgbw458pm" path="res://prefabs/SwitchboardSocket.tscn" id="2_cdlke"]
+[ext_resource type="Texture2D" uid="uid://bytkcfxq0pgqa" path="res://textures/plug.png" id="3_71815"]
 
 [node name="DaySwitchboard" type="Node2D"]
+
+[node name="FirstWireSpawnPoint" type="Node2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(996, 1064)
+
+[node name="Sprite2D" type="Sprite2D" parent="FirstWireSpawnPoint"]
+scale = Vector2(0.07, 0.07)
+texture = ExtResource("3_71815")
 
 [node name="Switchboard" parent="." instance=ExtResource("1_6ggwg")]
 position = Vector2(-2, -20)
@@ -29,7 +38,3 @@ shape = 2
 [node name="SwitchboardSocket3" parent="Switchboard/SwitchboardSockets" instance=ExtResource("2_cdlke")]
 position = Vector2(963, 770)
 shape = 1
-
-[node name="FirstWireSpawnPoint" type="Node2D" parent="."]
-unique_name_in_owner = true
-position = Vector2(796, 695)
