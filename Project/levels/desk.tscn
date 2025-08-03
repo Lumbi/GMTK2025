@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://c0yrhpggtuifq"]
+[gd_scene load_steps=12 format=3 uid="uid://c0yrhpggtuifq"]
 
 [ext_resource type="Script" uid="uid://cc26jou0o3fdk" path="res://scripts/desk.gd" id="1_b51fv"]
 [ext_resource type="Script" uid="uid://c617b1gh5fxtl" path="res://scripts/camera_2d.gd" id="2_0jnev"]
@@ -8,7 +8,9 @@
 [ext_resource type="Texture2D" uid="uid://be42vnrc1khmf" path="res://textures/Desk_Illustration2_1_Empty.png" id="5_1cuu8"]
 [ext_resource type="PackedScene" uid="uid://cuwvo1as8oidn" path="res://prefabs/year_switchboard.tscn" id="5_i17aw"]
 [ext_resource type="PackedScene" uid="uid://bsb0hmho24r76" path="res://prefabs/month_switchboard.tscn" id="7_50fcr"]
+[ext_resource type="Texture2D" uid="uid://omfaxu7koe61" path="res://textures/milo.jpg" id="7_v81xl"]
 [ext_resource type="PackedScene" uid="uid://bxo3obomatb5r" path="res://prefabs/day_switchboard.tscn" id="8_1cuu8"]
+[ext_resource type="Texture2D" uid="uid://o2wmgtswj24h" path="res://textures/bella.jpg" id="8_gyajy"]
 
 [node name="Desk" type="Node2D"]
 script = ExtResource("1_b51fv")
@@ -86,6 +88,20 @@ position = Vector2(1744, -288)
 position = Vector2(26, 21)
 scale = Vector2(0.9, 0.9)
 texture = ExtResource("5_1cuu8")
+
+[node name="Cats" type="Node2D" parent="DeskBg"]
+
+[node name="Sprite2D2" type="Sprite2D" parent="DeskBg/Cats"]
+position = Vector2(-1864.71, -316.214)
+rotation = 0.0479507
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("7_v81xl")
+
+[node name="Sprite2D" type="Sprite2D" parent="DeskBg/Cats"]
+position = Vector2(-2079.35, -440.784)
+rotation = -0.140531
+scale = Vector2(0.44, 0.44)
+texture = ExtResource("8_gyajy")
 
 [node name="YearSwitchboard" parent="." instance=ExtResource("5_i17aw")]
 position = Vector2(-487, -454)
