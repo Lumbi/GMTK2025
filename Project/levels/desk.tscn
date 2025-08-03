@@ -5,8 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://cot4gmg4qs8lb" path="res://prefabs/time_input_control.tscn" id="2_ex12m"]
 [ext_resource type="Script" uid="uid://cxbj6qqbp8s1l" path="res://scripts/click_area_button.gd" id="2_i17aw"]
 [ext_resource type="PackedScene" uid="uid://beadrrthhy7nl" path="res://prefabs/postprocessing.tscn" id="2_sw5wi"]
+[ext_resource type="Texture2D" uid="uid://c7tgjduuned07" path="res://textures/Backgound_Operator.png" id="5_gyajy"]
 [ext_resource type="PackedScene" uid="uid://cuwvo1as8oidn" path="res://prefabs/year_switchboard.tscn" id="5_i17aw"]
-[ext_resource type="Texture2D" uid="uid://8e4c0gqevkfe" path="res://textures/Background_downgradedv2.png" id="6_v81xl"]
 [ext_resource type="PackedScene" uid="uid://bsb0hmho24r76" path="res://prefabs/month_switchboard.tscn" id="7_50fcr"]
 [ext_resource type="Texture2D" uid="uid://omfaxu7koe61" path="res://textures/milo.jpg" id="7_v81xl"]
 [ext_resource type="PackedScene" uid="uid://bxo3obomatb5r" path="res://prefabs/day_switchboard.tscn" id="8_1cuu8"]
@@ -79,7 +79,7 @@ position = Vector2(1744, -288)
 [node name="DeskBg" type="Sprite2D" parent="."]
 position = Vector2(26, 21)
 scale = Vector2(0.9, 0.9)
-texture = ExtResource("6_v81xl")
+texture = ExtResource("5_gyajy")
 
 [node name="Cats" type="Node2D" parent="DeskBg"]
 
@@ -171,6 +171,7 @@ text = "  Back ↩ "
 unique_name_in_owner = true
 
 [node name="AudioListener2D" type="AudioListener2D" parent="."]
+position = Vector2(910, 686)
 
 [connection signal="pressed" from="CanvasLayer/MonthSwitchboardButton" to="." method="_on_month_switchboard_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/DaySwitchboardButton" to="." method="_on_day_switchboard_button_pressed"]

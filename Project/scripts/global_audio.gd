@@ -67,3 +67,6 @@ func play_sfx(sfx_name: String):
 
 func get_all_sfx_names() -> Array[String]:
 	return sfx_dictionary.keys()
+
+func set_dialog_is_playing(is_playing : bool) -> void:
+	audio_manager.is_voice_playing = is_playing

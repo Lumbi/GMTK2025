@@ -63,10 +63,12 @@ func try_to_start_audio():
 
 
 func dialogue_started(resource: DialogueResource):
-	pass
+	GlobalAudio.set_dialog_is_playing(true)
 
 func dialogue_ended(resource: DialogueResource):
+	GlobalAudio.set_dialog_is_playing(false)
 	GlobalAudio.play_sfx("2025_GMTL_sfx_out")
+	GlobalAudio.set_dialog_is_playing(false)
 	dialog_player.stop()
 	if switchboard_manager.active_socketid >= 0:
 		switchboard_manager.reset()
