@@ -1,56 +1,60 @@
-[gd_scene load_steps=9 format=3 uid="uid://cot4gmg4qs8lb"]
+[gd_scene load_steps=7 format=3 uid="uid://cot4gmg4qs8lb"]
 
 [ext_resource type="Script" uid="uid://bv1nua1wcmg11" path="res://scripts/time_input.gd" id="1_1mtwh"]
 [ext_resource type="PackedScene" uid="uid://b4w65f8jynbbx" path="res://prefabs/4digit_input.tscn" id="2_qt5um"]
 [ext_resource type="PackedScene" uid="uid://vgi51wagrca6" path="res://prefabs/2digit_input.tscn" id="3_7r45r"]
-[ext_resource type="Texture2D" uid="uid://dcqobca5esewm" path="res://textures/text_annus.png" id="4_roeqe"]
-[ext_resource type="Texture2D" uid="uid://bvalxcwbnufqj" path="res://textures/text_month.png" id="5_jxch0"]
-[ext_resource type="Texture2D" uid="uid://dht4tw4qsfio1" path="res://textures/text_day.png" id="6_48jwo"]
 [ext_resource type="Texture2D" uid="uid://lv8ypv3gej46" path="res://textures/text_enter.png" id="7_h7chf"]
 [ext_resource type="Texture2D" uid="uid://lg1pqail2j81" path="res://textures/text_enter_hover.png" id="8_yxt5i"]
+
+[sub_resource type="SystemFont" id="SystemFont_i4ojg"]
 
 [node name="TimeInput" type="Control"]
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_1mtwh")
 
-[node name="TextYear" type="TextureRect" parent="."]
-self_modulate = Color(0.635281, 0.268544, 0.0735159, 1)
+[node name="TextYear" type="Label" parent="."]
 layout_mode = 0
-offset_top = -7.0
-offset_right = 184.0
-offset_bottom = 71.0
-texture = ExtResource("4_roeqe")
+offset_left = 5.0
+offset_top = -64.0
+offset_right = 97.0
+offset_bottom = -6.0
+theme_override_colors/font_color = Color(0.264341, 0.168379, 0.0294818, 1)
+theme_override_fonts/font = SubResource("SystemFont_i4ojg")
+theme_override_font_sizes/font_size = 42
+text = "Year"
 
-[node name="TextMonth" type="TextureRect" parent="."]
-self_modulate = Color(0.635281, 0.268544, 0.0735159, 1)
+[node name="TextMonth" type="Label" parent="."]
 layout_mode = 0
-offset_left = 250.0
-offset_top = 212.0
-offset_right = 434.0
-offset_bottom = 290.0
+offset_left = 384.0
+offset_top = 302.0
+offset_right = 518.0
+offset_bottom = 360.0
 rotation = 1.5708
-texture = ExtResource("5_jxch0")
+theme_override_colors/font_color = Color(0.264341, 0.168379, 0.0294818, 1)
+theme_override_fonts/font = SubResource("SystemFont_i4ojg")
+theme_override_font_sizes/font_size = 42
+text = "Month"
 
-[node name="TextDay" type="TextureRect" parent="."]
-self_modulate = Color(0.635281, 0.268544, 0.0735159, 1)
+[node name="TextDay" type="Label" parent="."]
 layout_mode = 0
-offset_left = 11.0
-offset_top = 544.0
-offset_right = 195.0
-offset_bottom = 622.0
+offset_left = 36.0
+offset_top = 866.0
+offset_right = 114.0
+offset_bottom = 924.0
 rotation = -1.5708
-texture = ExtResource("6_48jwo")
+theme_override_colors/font_color = Color(0.264341, 0.168379, 0.0294818, 1)
+theme_override_fonts/font = SubResource("SystemFont_i4ojg")
+theme_override_font_sizes/font_size = 42
+text = "Day"
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 23.0
-offset_top = -1.0
-offset_right = 235.0
-offset_bottom = 592.17
+offset_right = 424.0
+offset_bottom = 924.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -61,6 +65,7 @@ theme_override_constants/separation = 0
 
 [node name="YearInput" parent="CenterContainer/VBoxContainer" instance=ExtResource("2_qt5um")]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(424, 300)
 layout_mode = 2
 
 [node name="CenterContainer2" type="CenterContainer" parent="CenterContainer/VBoxContainer"]
@@ -68,23 +73,27 @@ layout_mode = 2
 
 [node name="MonthInput" parent="CenterContainer/VBoxContainer/CenterContainer2" instance=ExtResource("3_7r45r")]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(208, 312)
 layout_mode = 2
 
 [node name="CenterContainer" type="CenterContainer" parent="CenterContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 6.93)
 layout_mode = 2
 
 [node name="DayInput" parent="CenterContainer/VBoxContainer/CenterContainer" instance=ExtResource("3_7r45r")]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(208, 312)
 layout_mode = 2
 
 [node name="ConfirmButton" type="TextureButton" parent="."]
 self_modulate = Color(0.957659, 0.668636, 0.403513, 1)
 layout_mode = 0
-offset_left = 13.0
-offset_top = 522.0
-offset_right = 247.0
-offset_bottom = 600.0
+offset_left = 59.0
+offset_top = 917.0
+offset_right = 362.0
+offset_bottom = 1018.0
 texture_normal = ExtResource("7_h7chf")
 texture_hover = ExtResource("8_yxt5i")
+stretch_mode = 0
 
 [connection signal="pressed" from="ConfirmButton" to="." method="_on_confirm_button_pressed"]

@@ -15,6 +15,29 @@ func _on_confirm_button_pressed() -> void:
 		Global.win_game()
 	else:
 		print("NOPE")
-		# do a shake effect of something?
-
+		shake(0.5, 10)
 	pass
+
+var original_position := Vector2.ZERO
+var shake_time := 0.0
+var shake_duration := 0.0
+var shake_intensity := 0
+
+func _ready():
+	original_position = position
+
+func shake(duration: float, intensity: float) -> void:
+	shake_duration = duration
+	shake_intensity = intensity
+	shake_time = 0.0
+
+func _process(delta: float) -> void:
+	if shake_time < shake_duration:
+		shake_time += delta
+		var offset = Vector2(
+			randf_range(-shake_intensity, shake_intensity),
+			randf_range(-shake_intensity, shake_intensity)
+		)
+		position = original_position + offset
+	else:
+		position = original_position

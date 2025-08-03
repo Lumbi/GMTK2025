@@ -1,5 +1,12 @@
 extends Node2D
 
+func _ready() -> void:
+	start_tutorial()
+	
+var tutorial_dialogue = load("res://dialogues/tutorial.dialogue")
+func start_tutorial():
+	DialogueManager.show_dialogue_balloon(tutorial_dialogue, "start")
+
 func _on_day_switchboard_button_pressed() -> void:
 	zoom_to(%DayZoomTarget.global_position)
 	$DaySwitchboard/Switchboard.activate()

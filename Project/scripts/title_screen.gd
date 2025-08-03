@@ -11,7 +11,7 @@ func _input(event):
 		quit()
 
 func _on_play_button_pressed() -> void:
-	Global.go_to_level("intro")
+	Global.go_to_level("desk")
 
 func _on_fullscreen_button_pressed() -> void:
 	if DisplayServer.window_get_mode() == DisplayServer.WINDOW_MODE_WINDOWED:
@@ -19,5 +19,5 @@ func _on_fullscreen_button_pressed() -> void:
 		%ScreenButton.text = "Window"
 	else:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
-		DisplayServer.window_set_size(Vector2i(1152, 648))
+		DisplayServer.window_set_size(Vector2i(1920, 1080))
 		%ScreenButton.text = "Fullscreen"
