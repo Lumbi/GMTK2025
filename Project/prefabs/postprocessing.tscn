@@ -1,13 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://beadrrthhy7nl"]
+[gd_scene load_steps=4 format=3 uid="uid://beadrrthhy7nl"]
 
+[ext_resource type="Script" uid="uid://cnge67r1hl5qb" path="res://scripts/postprocessing_controller.gd" id="1_a8hbr"]
 [ext_resource type="Shader" uid="uid://d3q8a7hosiuxr" path="res://Shaders/postprocessing.gdshader" id="1_r51f7"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_a8hbr"]
 shader = ExtResource("1_r51f7")
 shader_parameter/curvature = 0.5
 shader_parameter/chromatic_aberration = 0.03
+shader_parameter/fade = 1.0
 
 [node name="Postprocessing" type="Node2D"]
+script = ExtResource("1_a8hbr")
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
 physics_interpolation_mode = 2
