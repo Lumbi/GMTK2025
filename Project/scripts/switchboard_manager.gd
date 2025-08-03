@@ -119,8 +119,11 @@ func on_socket_connected(socket: Node) -> void:
 		current_wire = null
 		spawn_wire(output_socket.global_position)
 		shape_dial.toggle_shape(socket.shape)
-	audio_dialogstation.try_to_start_audio()
+	var start_dialog = audio_dialogstation.try_to_start_audio()
+
 	if switchboard_active_socket_nodes.size() >= max_connections:
+		if start_dialog == false : 
+			GlobalAudio.play_sfx("fail_sfx")
 		max_connections_reached()
 
 func on_socket_disconected(_socket: Node) -> void:
