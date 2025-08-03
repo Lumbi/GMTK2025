@@ -5,6 +5,7 @@ func _on_day_switchboard_button_pressed() -> void:
 	$DaySwitchboard/Switchboard.activate()
 	$MonthSwitchboard/Switchboard.inactive()
 	$YearSwitchboard/Switchboard.inactive()
+	GlobalAudio.set_zoom_on_board(true)
 	pass
 
 func _on_month_switchboard_button_pressed() -> void:
@@ -12,6 +13,7 @@ func _on_month_switchboard_button_pressed() -> void:
 	$DaySwitchboard/Switchboard.inactive()
 	$MonthSwitchboard/Switchboard.activate()
 	$YearSwitchboard/Switchboard.inactive()
+	GlobalAudio.set_zoom_on_board(true)
 	pass
 	
 func _on_year_switchboard_button_pressed() -> void:
@@ -19,6 +21,7 @@ func _on_year_switchboard_button_pressed() -> void:
 	$DaySwitchboard/Switchboard.inactive()
 	$MonthSwitchboard/Switchboard.inactive()
 	$YearSwitchboard/Switchboard.activate()
+	GlobalAudio.set_zoom_on_board(true)
 	pass
 
 func _on_input_button_pressed() -> void:
@@ -42,6 +45,7 @@ func zoom_back() -> void:
 	set_click_area_button_active(true)
 	$Camera2D.zoom_to(0.4, Vector2(0, 0))
 	%ZoomBackButton.visible = false
+	GlobalAudio.set_zoom_on_board(false)
 
 func set_click_area_button_active(flag):
 	%YearSwitchboardButton.set_active(flag)
