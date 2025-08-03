@@ -16,6 +16,7 @@ func _on_confirm_button_pressed() -> void:
 	else:
 		%CameraContainer.shake()
 		%TimeInput_VFX.play()
+		GlobalAudio.play_sfx("fail_sfx")
 		print("NOPE")
 		shake(0.5, 10)
 	pass

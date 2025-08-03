@@ -60,6 +60,8 @@ func try_to_start_audio():
 			DialogueManager.show_dialogue_balloon(shape_station.dialog, "start")
 			dialog_player.stream = shape_station.audio
 			dialog_player.play()
+			return true
+	return false 
 
 
 func dialogue_started(resource: DialogueResource):
