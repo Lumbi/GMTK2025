@@ -4,7 +4,9 @@ extends Node
 # You can use it as a singleton to handle logic from anywhere.
 
 func win_game():
+	GlobalAudio.game_win()
 	go_to_level("win")
+
 
 func go_to_level(level: String):
 	get_tree().change_scene_to_file("res://levels/" + level + ".tscn")
