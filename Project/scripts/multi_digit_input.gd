@@ -15,9 +15,10 @@ func _process(_delta: float) -> void:
 	for n in digit_nodes.size():
 		new_value += (digit_nodes[n].get_value() * (pow(10, n)))
 	
-	# DEBUG
+	# DEBUG and sound
 	if value != new_value:
 		print("INPUT ", self, " = ", new_value)
+		GlobalAudio.play_sfx("2025_GMTL_sfx_date_panel")
 
 	value = new_value
 	pass

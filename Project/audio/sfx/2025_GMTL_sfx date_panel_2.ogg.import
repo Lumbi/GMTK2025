@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cln4v6ll80bdw"
+path="res://.godot/imported/2025_GMTL_sfx date_panel_2.ogg-793c16c38e49ed0eb083f4171c56194e.oggvorbisstr"
+
+[deps]
+
+source_file="res://audio/sfx/2025_GMTL_sfx date_panel_2.ogg"
+dest_files=["res://.godot/imported/2025_GMTL_sfx date_panel_2.ogg-793c16c38e49ed0eb083f4171c56194e.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

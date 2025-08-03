@@ -5,6 +5,7 @@ var test_dialogue = load("res://dialogues/test.dialogue")
 var shape_dial : Node
 var switchboard_manager : Node
 var dialog_player : Node
+var audio_manager : Node
 
 class ShapeStation:
 	var shape: String
@@ -65,7 +66,9 @@ func dialogue_started(resource: DialogueResource):
 	pass
 
 func dialogue_ended(resource: DialogueResource):
+	GlobalAudio.play_sfx("2025_GMTL_sfx_out")
 	dialog_player.stop()
 	if switchboard_manager.active_socketid >= 0:
 		switchboard_manager.reset()
 		switchboard_manager.activate()
+		

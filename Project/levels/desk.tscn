@@ -1,9 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://c0yrhpggtuifq"]
+[gd_scene load_steps=14 format=3 uid="uid://c0yrhpggtuifq"]
 
 [ext_resource type="Script" uid="uid://cc26jou0o3fdk" path="res://scripts/desk.gd" id="1_b51fv"]
 [ext_resource type="Script" uid="uid://c617b1gh5fxtl" path="res://scripts/camera_2d.gd" id="2_0jnev"]
 [ext_resource type="PackedScene" uid="uid://cot4gmg4qs8lb" path="res://prefabs/time_input_control.tscn" id="2_ex12m"]
-[ext_resource type="Script" uid="uid://cxbj6qqbp8s1l" path="res://scripts/click_area_button.gd" id="2_i17aw"]
+[ext_resource type="Script" path="res://scripts/click_area_button.gd" id="2_i17aw"]
 [ext_resource type="PackedScene" uid="uid://beadrrthhy7nl" path="res://prefabs/postprocessing.tscn" id="2_sw5wi"]
 [ext_resource type="PackedScene" uid="uid://cuwvo1as8oidn" path="res://prefabs/year_switchboard.tscn" id="5_i17aw"]
 [ext_resource type="Texture2D" uid="uid://8e4c0gqevkfe" path="res://textures/Background_downgradedv2.png" id="6_v81xl"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://omfaxu7koe61" path="res://textures/milo.jpg" id="7_v81xl"]
 [ext_resource type="PackedScene" uid="uid://bxo3obomatb5r" path="res://prefabs/day_switchboard.tscn" id="8_1cuu8"]
 [ext_resource type="Texture2D" uid="uid://o2wmgtswj24h" path="res://textures/bella.jpg" id="8_gyajy"]
+[ext_resource type="PackedScene" uid="uid://de6bydf3joeov" path="res://prefabs/AudioManager.tscn" id="12_gyajy"]
 
 [sub_resource type="Gradient" id="Gradient_v81xl"]
 offsets = PackedFloat32Array(0, 0.512635, 1)
@@ -164,6 +165,11 @@ offset_top = 32.0
 offset_right = 90.0
 offset_bottom = 63.0
 text = " BACK "
+
+[node name="AudioManager" parent="." instance=ExtResource("12_gyajy")]
+unique_name_in_owner = true
+
+[node name="AudioListener2D" type="AudioListener2D" parent="."]
 
 [connection signal="pressed" from="CanvasLayer/MonthSwitchboardButton" to="." method="_on_month_switchboard_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/DaySwitchboardButton" to="." method="_on_day_switchboard_button_pressed"]

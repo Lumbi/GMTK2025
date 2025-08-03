@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://di51ct3pqtkdd"
+path="res://.godot/imported/2025_GMTL_sfx in_2.ogg-2cf8ee2a9c00297a2b4d315ee9a680c4.oggvorbisstr"
+
+[deps]
+
+source_file="res://audio/sfx/2025_GMTL_sfx in_2.ogg"
+dest_files=["res://.godot/imported/2025_GMTL_sfx in_2.ogg-2cf8ee2a9c00297a2b4d315ee9a680c4.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

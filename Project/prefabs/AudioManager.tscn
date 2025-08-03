@@ -1,10 +1,24 @@
-[gd_scene load_steps=2 format=3 uid="uid://de6bydf3joeov"]
+[gd_scene load_steps=5 format=3 uid="uid://de6bydf3joeov"]
 
 [ext_resource type="Script" uid="uid://cr3kbhwva88qc" path="res://scripts/audio_manager.gd" id="1_mccn2"]
+[ext_resource type="AudioStream" uid="uid://ctc4fwru87h7t" path="res://audio/sfx/Static_Soft_Lp.ogg" id="2_vqefm"]
+[ext_resource type="AudioStream" uid="uid://db3sivw250y11" path="res://audio/2025_MainTheme_GameJamGMTL.ogg" id="3_281mq"]
+[ext_resource type="AudioStream" uid="uid://tot5ody8a8wc" path="res://audio/sfx/TvOn_crt.ogg" id="4_281mq"]
 
 [node name="AudioManager" type="Node2D"]
 script = ExtResource("1_mccn2")
 
 [node name="Ambince" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_vqefm")
+autoplay = true
+parameters/looping = true
 
 [node name="Music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_281mq")
+autoplay = true
+parameters/looping = true
+
+[node name="SFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_281mq")
+volume_db = 5.635
+autoplay = true

@@ -106,6 +106,8 @@ func check_previous_node_connected_but_not_current_active() -> void:
 		previous_node.swap_to_connected_socket_but_not_current_active()
 
 func on_socket_connected(socket: Node) -> void:
+	GlobalAudio.play_sfx("2025_GMTL_sfx_in")
+
 	var input_socket = socket.input_socket_node
 	var output_socket = socket.output_socket_node
 	check_previous_node_connected_but_not_current_active()
@@ -124,6 +126,7 @@ func on_socket_connected(socket: Node) -> void:
 func on_socket_disconected(_socket: Node) -> void:
 	var last_wire_pair = switchboard_active_socket_nodes.pop_back() #previous wire 
 	if last_wire_pair != null:
+		GlobalAudio.play_sfx("2025_GMTL_sfx_out")
 		var wire = last_wire_pair["wire"]
 		var socket = last_wire_pair["socket"]
 		shape_dial.toggle_shape(socket.shape)
