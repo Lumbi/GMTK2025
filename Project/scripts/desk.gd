@@ -37,12 +37,14 @@ func _on_input_button_pressed() -> void:
 
 func _on_back_button_pressed() -> void:
 	zoom_back()
+	GlobalAudio.play_sfx("zoom_out")
 	pass
 
 func zoom_to(_position) -> void:
 	%Camera2D.zoom_to(0.8, _position)
 	%ZoomBackButton.visible = true
 	set_click_area_button_active(false)
+	GlobalAudio.play_sfx("zoom_in")
 	pass
 	
 func zoom_back() -> void:

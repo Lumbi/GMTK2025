@@ -8,6 +8,8 @@ var sfx_mix: Dictionary[String, float] = {
 	"2025_GMTL_sfx_date_panel" : -3,
 	"TvOn_crt" : -6,
 	"fail_sfx" : 0,
+	"zoom_in" : -18,
+	"zoom_out" :-18,
 }
 
 func get_audio_manager():
