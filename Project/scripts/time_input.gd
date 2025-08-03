@@ -14,6 +14,8 @@ func _on_confirm_button_pressed() -> void:
 		print("YOU WIN!")
 		Global.win_game()
 	else:
+		%CameraContainer.shake()
+		%TimeInput_VFX.play()
 		print("NOPE")
 		shake(0.5, 10)
 	pass

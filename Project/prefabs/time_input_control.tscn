@@ -1,8 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://cot4gmg4qs8lb"]
+[gd_scene load_steps=9 format=3 uid="uid://cot4gmg4qs8lb"]
 
 [ext_resource type="Script" uid="uid://bv1nua1wcmg11" path="res://scripts/time_input.gd" id="1_1mtwh"]
 [ext_resource type="PackedScene" uid="uid://b4w65f8jynbbx" path="res://prefabs/4digit_input.tscn" id="2_qt5um"]
 [ext_resource type="PackedScene" uid="uid://vgi51wagrca6" path="res://prefabs/2digit_input.tscn" id="3_7r45r"]
+[ext_resource type="Script" uid="uid://cigxf1v06aku8" path="res://scripts/vfx_sparks.gd" id="6_o3nlu"]
+[ext_resource type="PackedScene" uid="uid://4lstbqich5kx" path="res://prefabs/VFX/vfx_sparks.tscn" id="7_fcasv"]
 [ext_resource type="Texture2D" uid="uid://lv8ypv3gej46" path="res://textures/text_enter.png" id="7_h7chf"]
 [ext_resource type="Texture2D" uid="uid://lg1pqail2j81" path="res://textures/text_enter_hover.png" id="8_yxt5i"]
 
@@ -95,5 +97,17 @@ offset_bottom = 1018.0
 texture_normal = ExtResource("7_h7chf")
 texture_hover = ExtResource("8_yxt5i")
 stretch_mode = 0
+
+[node name="TimeInput_VFX" type="Node2D" parent="."]
+unique_name_in_owner = true
+script = ExtResource("6_o3nlu")
+
+[node name="VfxSparks" parent="TimeInput_VFX" instance=ExtResource("7_fcasv")]
+position = Vector2(30, 571)
+rotation = -3.8784
+
+[node name="VfxSparks2" parent="TimeInput_VFX" instance=ExtResource("7_fcasv")]
+position = Vector2(398, 166)
+rotation = -1.47701
 
 [connection signal="pressed" from="ConfirmButton" to="." method="_on_confirm_button_pressed"]

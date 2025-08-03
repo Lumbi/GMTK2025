@@ -1,14 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://4lstbqich5kx"]
+[gd_scene load_steps=4 format=3 uid="uid://4lstbqich5kx"]
+
+[ext_resource type="Script" uid="uid://cigxf1v06aku8" path="res://scripts/vfx_sparks.gd" id="1_gyy7k"]
 
 [sub_resource type="Curve" id="Curve_ap040"]
-_data = [Vector2(0, 0.270054), 0.0, 0.0, 0, 0, Vector2(0.966997, 0.270408), 0.0, 0.0, 0, 0]
-point_count = 2
+_data = [Vector2(0.448845, 0.374332), 0.0, 0.0, 0, 0]
+point_count = 1
 
 [sub_resource type="Gradient" id="Gradient_gyy7k"]
 offsets = PackedFloat32Array(0, 0.483755, 1)
 colors = PackedColorArray(0.88, 0.8712, 0.704, 1, 0.88, 0.81532, 0.4488, 1, 1, 1, 1, 0)
 
 [node name="VfxSparks" type="Node2D"]
+script = ExtResource("1_gyy7k")
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
 emitting = false
@@ -20,14 +23,16 @@ randomness = 0.53
 local_coords = true
 emission_shape = 1
 emission_sphere_radius = 14.43
+particle_flag_align_y = true
 direction = Vector2(0, 5)
 spread = 102.78
-initial_velocity_min = 209.88
-initial_velocity_max = 296.29
+initial_velocity_min = 620.6
+initial_velocity_max = 1000.0
 angle_min = -151.1
 angle_max = -8.9
-scale_amount_max = 4.05
+scale_amount_min = 10.0
+scale_amount_max = 20.0
 split_scale = true
-scale_curve_x = null
-scale_curve_y = SubResource("Curve_ap040")
+scale_curve_x = SubResource("Curve_ap040")
+scale_curve_y = null
 color_ramp = SubResource("Gradient_gyy7k")

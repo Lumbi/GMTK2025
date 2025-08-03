@@ -1,10 +1,11 @@
-[gd_scene load_steps=14 format=3 uid="uid://c0yrhpggtuifq"]
+[gd_scene load_steps=16 format=3 uid="uid://c0yrhpggtuifq"]
 
 [ext_resource type="Script" uid="uid://cc26jou0o3fdk" path="res://scripts/desk.gd" id="1_b51fv"]
 [ext_resource type="Script" uid="uid://c617b1gh5fxtl" path="res://scripts/camera_2d.gd" id="2_0jnev"]
 [ext_resource type="PackedScene" uid="uid://cot4gmg4qs8lb" path="res://prefabs/time_input_control.tscn" id="2_ex12m"]
 [ext_resource type="Script" uid="uid://cxbj6qqbp8s1l" path="res://scripts/click_area_button.gd" id="2_i17aw"]
 [ext_resource type="PackedScene" uid="uid://beadrrthhy7nl" path="res://prefabs/postprocessing.tscn" id="2_sw5wi"]
+[ext_resource type="Script" uid="uid://boydstglaewvr" path="res://scripts/camera_shaker.gd" id="4_mxjqj"]
 [ext_resource type="Texture2D" uid="uid://c7tgjduuned07" path="res://textures/Backgound_Operator.png" id="5_gyajy"]
 [ext_resource type="PackedScene" uid="uid://cuwvo1as8oidn" path="res://prefabs/year_switchboard.tscn" id="5_i17aw"]
 [ext_resource type="PackedScene" uid="uid://bsb0hmho24r76" path="res://prefabs/month_switchboard.tscn" id="7_50fcr"]
@@ -12,6 +13,10 @@
 [ext_resource type="PackedScene" uid="uid://bxo3obomatb5r" path="res://prefabs/day_switchboard.tscn" id="8_1cuu8"]
 [ext_resource type="Texture2D" uid="uid://o2wmgtswj24h" path="res://textures/bella.jpg" id="8_gyajy"]
 [ext_resource type="PackedScene" uid="uid://de6bydf3joeov" path="res://prefabs/AudioManager.tscn" id="12_gyajy"]
+
+[sub_resource type="Curve" id="Curve_mxjqj"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.520635, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
 
 [sub_resource type="Gradient" id="Gradient_v81xl"]
 offsets = PackedFloat32Array(0, 0.512635, 1)
@@ -70,7 +75,17 @@ scale = Vector2(1.28, 2)
 flat = true
 script = ExtResource("2_i17aw")
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="CameraContainer" type="Node2D" parent="."]
+unique_name_in_owner = true
+script = ExtResource("4_mxjqj")
+shake_amount = 20.0
+shake_duration = 0.2
+shake_speed = 50.0
+shake_amplitude = 30
+curve = SubResource("Curve_mxjqj")
+
+[node name="Camera2D" type="Camera2D" parent="CameraContainer"]
+unique_name_in_owner = true
 zoom = Vector2(0.4, 0.4)
 script = ExtResource("2_0jnev")
 
