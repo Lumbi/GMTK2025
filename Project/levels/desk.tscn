@@ -176,10 +176,14 @@ layer = 10
 [node name="ZoomBackButton" type="Button" parent="Overlay"]
 unique_name_in_owner = true
 visible = false
-offset_left = 32.0
-offset_top = 32.0
-offset_right = 90.0
-offset_bottom = 63.0
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -228.0
+offset_top = 36.0
+offset_right = -37.0
+offset_bottom = 102.0
+grow_horizontal = 0
 theme_override_font_sizes/font_size = 42
 text = "  Back ↩ "
 
