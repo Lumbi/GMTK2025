@@ -10,6 +10,7 @@ uniform sampler2D screen_texture: hint_screen_texture, filter_linear_mipmap, rep
 group_uniforms Image;
 uniform float curvature: hint_range(0., 10., .01) = 2.;
 uniform float chromatic_aberration = 0.01;
+uniform float fade = 1.;
 
 vec2 screenDistort(vec2 uv)
 {
@@ -31,5 +32,5 @@ void fragment()
 	float b = texture(screen_texture, uv + vec2(0.4,0.1)*ca).b;
 
 	vec3 color = vec3(r,g,b);
-	COLOR = vec4(color * vignette,1.);
+	COLOR = vec4(color * vignette * fade,1.);
 }

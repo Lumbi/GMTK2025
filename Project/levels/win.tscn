@@ -1,8 +1,11 @@
-[gd_scene format=3 uid="uid://dg3is1k4qed4a"]
+[gd_scene load_steps=2 format=3 uid="uid://dg3is1k4qed4a"]
+
+[ext_resource type="PackedScene" uid="uid://beadrrthhy7nl" path="res://prefabs/postprocessing.tscn" id="1_2n2l3"]
 
 [node name="Win" type="Node2D"]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 128
 
 [node name="CenterContainer" type="CenterContainer" parent="CanvasLayer"]
 anchors_preset = 15
@@ -15,3 +18,5 @@ grow_vertical = 2
 layout_mode = 2
 theme_override_font_sizes/font_size = 128
 text = "YOU WIN!!!"
+
+[node name="Postprocessing" parent="." instance=ExtResource("1_2n2l3")]
