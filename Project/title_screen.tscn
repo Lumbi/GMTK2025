@@ -7,7 +7,7 @@
 font_size = 24
 
 [sub_resource type="LabelSettings" id="LabelSettings_v6p8y"]
-font_size = 64
+font_size = 128
 
 [node name="TitleScreen" type="Control"]
 layout_mode = 3
@@ -32,7 +32,7 @@ grow_vertical = 2
 
 [node name="BackgroundColor" type="ColorRect" parent="PanelContainer"]
 layout_mode = 2
-color = Color(0.349977, 0.116953, 0.523816, 1)
+color = Color(0, 0, 0, 1)
 
 [node name="GMTK2025Label" type="Label" parent="."]
 layout_mode = 2
@@ -44,21 +44,26 @@ size_flags_horizontal = 0
 text = "GMTK Game Jam 2025"
 label_settings = SubResource("LabelSettings_1s85s")
 
-[node name="Credits" type="Label" parent="."]
+[node name="Credits" type="RichTextLabel" parent="."]
 layout_mode = 2
-offset_left = 28.0
-offset_top = 437.0
-offset_right = 322.0
-offset_bottom = 693.0
+offset_left = 44.0
+offset_top = 625.0
+offset_right = 557.0
+offset_bottom = 1046.0
 size_flags_horizontal = 0
-text = "nepp - design, art
-nameless  - writing
-freckles - music, sound
-danik - code
-gloombee - code
+theme_override_font_sizes/normal_font_size = 24
+theme_override_font_sizes/bold_font_size = 26
+bbcode_enabled = true
+text = "A game made with love by:
 
-"
-label_settings = SubResource("LabelSettings_1s85s")
+[b]nepp[/b]: art, voice acting
+[b]nameless[/b]: writing, art, voice acting
+[b]rommygnacia[/b]: music, voice acting
+[b]danik[/b]: music, audio, code, voice acting
+[b]robin[/b]: audio
+[b]hojaverde[/b]: shaders, voice acting
+[b]jiloombee[/b]: code"
+vertical_alignment = 2
 
 [node name="GameTitleLabel" type="Label" parent="."]
 layout_mode = 1
@@ -74,7 +79,8 @@ offset_bottom = -76.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 0
-text = "OUT OF THE LOOP"
+theme_override_font_sizes/font_size = 0
+text = "Out of the Loop"
 label_settings = SubResource("LabelSettings_v6p8y")
 horizontal_alignment = 1
 vertical_alignment = 1
