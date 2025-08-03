@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://cc26jou0o3fdk" path="res://scripts/desk.gd" id="1_b51fv"]
 [ext_resource type="Script" uid="uid://c617b1gh5fxtl" path="res://scripts/camera_2d.gd" id="2_0jnev"]
 [ext_resource type="PackedScene" uid="uid://cot4gmg4qs8lb" path="res://prefabs/time_input_control.tscn" id="2_ex12m"]
-[ext_resource type="Script" path="res://scripts/click_area_button.gd" id="2_i17aw"]
+[ext_resource type="Script" uid="uid://cxbj6qqbp8s1l" path="res://scripts/click_area_button.gd" id="2_i17aw"]
 [ext_resource type="PackedScene" uid="uid://beadrrthhy7nl" path="res://prefabs/postprocessing.tscn" id="2_sw5wi"]
 [ext_resource type="Texture2D" uid="uid://be42vnrc1khmf" path="res://textures/Desk_Illustration2_1_Empty.png" id="5_1cuu8"]
 [ext_resource type="PackedScene" uid="uid://cuwvo1as8oidn" path="res://prefabs/year_switchboard.tscn" id="5_i17aw"]
@@ -14,8 +14,6 @@
 
 [node name="Desk" type="Node2D"]
 script = ExtResource("1_b51fv")
-
-[node name="Postprocessing" parent="." instance=ExtResource("2_sw5wi")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 follow_viewport_enabled = true
@@ -66,17 +64,6 @@ scale = Vector2(1.28, 2)
 flat = true
 script = ExtResource("2_i17aw")
 
-[node name="Overlay" type="CanvasLayer" parent="."]
-
-[node name="ZoomBackButton" type="Button" parent="Overlay"]
-unique_name_in_owner = true
-visible = false
-offset_left = 32.0
-offset_top = 32.0
-offset_right = 90.0
-offset_bottom = 63.0
-text = " BACK "
-
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(0.5, 0.5)
 script = ExtResource("2_0jnev")
@@ -123,6 +110,20 @@ position = Vector2(-2102, -629)
 [node name="DayZoomTarget" type="Node2D" parent="DaySwitchboard"]
 unique_name_in_owner = true
 position = Vector2(987, 296)
+
+[node name="Postprocessing" parent="." instance=ExtResource("2_sw5wi")]
+
+[node name="Overlay" type="CanvasLayer" parent="."]
+layer = 10
+
+[node name="ZoomBackButton" type="Button" parent="Overlay"]
+unique_name_in_owner = true
+visible = false
+offset_left = 32.0
+offset_top = 32.0
+offset_right = 90.0
+offset_bottom = 63.0
+text = " BACK "
 
 [connection signal="pressed" from="CanvasLayer/MonthSwitchboardButton" to="." method="_on_month_switchboard_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/DaySwitchboardButton" to="." method="_on_day_switchboard_button_pressed"]

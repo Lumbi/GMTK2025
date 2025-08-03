@@ -13,14 +13,16 @@ shader_parameter/fade = 1.0
 script = ExtResource("1_a8hbr")
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
-physics_interpolation_mode = 2
-layer = 0
+process_physics_priority = -1
+layer = 9
 follow_viewport_scale = 0.001
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer2"]
+process_physics_priority = -1
 material = SubResource("ShaderMaterial_a8hbr")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
