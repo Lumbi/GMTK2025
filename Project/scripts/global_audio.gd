@@ -1,11 +1,12 @@
 extends Node
 
 var sfx_dictionary: Dictionary = {}
-var audio_manager : Node
+
+func get_audio_manager():
+	return get_node("/root/Desk/AudioManager") ## HACK : Find a way to load it without hard coding a path
 
 func _ready():
 	load_all_sfx_files()
-	audio_manager = get_node("/root/Desk/AudioManager") ## HACK : Find a way to load it without hard coding a path
 
 func get_key_from_filename(file_name):
 	var key = file_name.get_basename()
@@ -62,11 +63,11 @@ func play_sfx_on_player(sfx_name: String, audio_player: AudioStreamPlayer2D):
 
 
 func play_sfx(sfx_name: String):
-	play_sfx_on_player(sfx_name, audio_manager.sfx)
+	play_sfx_on_player(sfx_name, get_audio_manager().sfx)
 
 
 func get_all_sfx_names() -> Array[String]:
 	return sfx_dictionary.keys()
 
 func set_dialog_is_playing(is_playing : bool) -> void:
-	audio_manager.is_voice_playing = is_playing
+	get_audio_manager().is_voice_playing = is_playing
