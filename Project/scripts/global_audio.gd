@@ -85,4 +85,3 @@ func set_dialog_is_playing(is_playing : bool) -> void:
 
 func set_zoom_on_board(zoomed_in : bool) -> void:
 	get_audio_manager().OnCamearaZoomed(zoomed_in)
-
