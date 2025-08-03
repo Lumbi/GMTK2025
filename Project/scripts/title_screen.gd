@@ -11,6 +11,7 @@ func _input(event):
 		quit()
 
 func _on_play_button_pressed() -> void:
+	GlobalAudio.play_sfx("TvOn_crt")
 	Global.go_to_level("desk")
 
 func _on_fullscreen_button_pressed() -> void:

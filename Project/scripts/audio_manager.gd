@@ -4,7 +4,8 @@ var amb : AudioStreamPlayer2D
 var sfx : AudioStreamPlayer2D
 var  is_voice_playing : bool = false
 var  is_ducking : bool = false
-@export var db_to_duck_while_voice_is_playing : int  = 9
+@export var music_duck_db : int  = 12
+@export var amb_duck_db : int  = 9
 
 func _ready():
 	amb = $Ambince
@@ -21,12 +22,12 @@ func _process(_delta: float) -> void:
 
 
 func duck_volume() -> void:
-	amb.volume_db -= db_to_duck_while_voice_is_playing
-	music.volume_db -= db_to_duck_while_voice_is_playing
+	amb.volume_db -= amb_duck_db
+	music.volume_db -= music_duck_db
 
 func unduck_volume() -> void:
-	amb.volume_db += db_to_duck_while_voice_is_playing
-	music.volume_db += db_to_duck_while_voice_is_playing
+	amb.volume_db += amb_duck_db
+	music.volume_db += music_duck_db
 
 func OnCamearaZoomed(zoomed_in : bool) -> void:
 	if zoomed_in == true:

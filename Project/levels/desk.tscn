@@ -12,7 +12,6 @@
 [ext_resource type="Texture2D" uid="uid://omfaxu7koe61" path="res://textures/milo.jpg" id="7_v81xl"]
 [ext_resource type="PackedScene" uid="uid://bxo3obomatb5r" path="res://prefabs/day_switchboard.tscn" id="8_1cuu8"]
 [ext_resource type="Texture2D" uid="uid://o2wmgtswj24h" path="res://textures/bella.jpg" id="8_gyajy"]
-[ext_resource type="PackedScene" uid="uid://de6bydf3joeov" path="res://prefabs/AudioManager.tscn" id="12_gyajy"]
 
 [sub_resource type="Curve" id="Curve_mxjqj"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.520635, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -186,9 +185,6 @@ offset_bottom = 102.0
 grow_horizontal = 0
 theme_override_font_sizes/font_size = 42
 text = "  Back ↩ "
-
-[node name="AudioManager" parent="." instance=ExtResource("12_gyajy")]
-unique_name_in_owner = true
 
 [node name="AudioListener2D" type="AudioListener2D" parent="."]
 position = Vector2(910, 686)

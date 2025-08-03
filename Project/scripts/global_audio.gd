@@ -2,13 +2,15 @@ extends Node
 
 var sfx_dictionary: Dictionary = {}
 
-func get_audio_manager():
-	return get_node("/root/Desk/AudioManager") ## HACK : Find a way to load it without hard coding a path
 var sfx_mix: Dictionary[String, float] = {
-	"2025_GMTL_sfx_in" : -6,
+	"2025_GMTL_sfx_in" : -3,
 	"2025_GMTL_sfx_out" : -3,
 	"2025_GMTL_sfx_date_panel" : 9,
+	"TvOn_crt" : 6,
 }
+
+func get_audio_manager():
+	return AudioManager
 
 func _ready():
 	load_all_sfx_files()

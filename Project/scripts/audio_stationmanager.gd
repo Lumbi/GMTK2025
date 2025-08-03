@@ -63,9 +63,14 @@ func try_to_start_audio():
 
 
 func dialogue_started(resource: DialogueResource):
+	print(resource.resource_path.get_file().get_basename())
+	if "tutorial" in resource.resource_path.get_file().get_basename():
+		return
 	GlobalAudio.set_dialog_is_playing(true)
 
 func dialogue_ended(resource: DialogueResource):
+	if "tutorial" in resource.resource_path.get_file().get_basename():
+		return
 	GlobalAudio.set_dialog_is_playing(false)
 	GlobalAudio.play_sfx("2025_GMTL_sfx_out")
 	GlobalAudio.set_dialog_is_playing(false)
