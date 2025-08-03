@@ -27,3 +27,9 @@ func duck_volume() -> void:
 func unduck_volume() -> void:
 	amb.volume_db += db_to_duck_while_voice_is_playing
 	music.volume_db += db_to_duck_while_voice_is_playing
+
+func OnCamearaZoomed(zoomed_in : bool) -> void:
+	if zoomed_in == true:
+		amb.play()
+	else:
+		amb.stop()

@@ -4,6 +4,11 @@ var sfx_dictionary: Dictionary = {}
 
 func get_audio_manager():
 	return get_node("/root/Desk/AudioManager") ## HACK : Find a way to load it without hard coding a path
+var sfx_mix: Dictionary[String, float] = {
+	"2025_GMTL_sfx_in" : -6,
+	"2025_GMTL_sfx_out" : -3,
+	"2025_GMTL_sfx_date_panel" : 9,
+}
 
 func _ready():
 	load_all_sfx_files()
@@ -58,9 +63,15 @@ func get_sfx(sfx_name: String) -> AudioStream:
 func play_sfx_on_player(sfx_name: String, audio_player: AudioStreamPlayer2D):
 	var sfx = get_sfx(sfx_name)
 	if sfx:
+		var vol = get_mix_value(sfx_name)
 		audio_player.stream = sfx
 		audio_player.play()
 
+func get_mix_value(sfx_name: String):
+	if sfx_mix.has(sfx_name):
+		return sfx_mix[sfx_name]
+	else:
+		return 0
 
 func play_sfx(sfx_name: String):
 	play_sfx_on_player(sfx_name, get_audio_manager().sfx)
@@ -71,3 +82,6 @@ func get_all_sfx_names() -> Array[String]:
 
 func set_dialog_is_playing(is_playing : bool) -> void:
 	get_audio_manager().is_voice_playing = is_playing
+
+func set_zoom_on_board(zoomed_in : bool) -> void:
+	get_audio_manager().OnCamearaZoomed(zoomed_in)

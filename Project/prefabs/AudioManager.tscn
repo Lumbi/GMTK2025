@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://de6bydf3joeov"]
 
 [ext_resource type="Script" uid="uid://cr3kbhwva88qc" path="res://scripts/audio_manager.gd" id="1_mccn2"]
-[ext_resource type="AudioStream" uid="uid://ctc4fwru87h7t" path="res://audio/sfx/Static_Soft_Lp.ogg" id="2_vqefm"]
+[ext_resource type="AudioStream" uid="uid://b05fhsnlfvhg1" path="res://audio/sfx/Static_Intense_Lp.ogg" id="2_281mq"]
 [ext_resource type="AudioStream" uid="uid://db3sivw250y11" path="res://audio/2025_MainTheme_GameJamGMTL.ogg" id="3_281mq"]
 [ext_resource type="AudioStream" uid="uid://tot5ody8a8wc" path="res://audio/sfx/TvOn_crt.ogg" id="4_281mq"]
 
@@ -9,9 +9,9 @@
 script = ExtResource("1_mccn2")
 
 [node name="Ambince" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("2_vqefm")
-autoplay = true
-parameters/looping = true
+stream = ExtResource("2_281mq")
+volume_db = 3.0
+panning_strength = 0.0
 
 [node name="Music" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_281mq")
@@ -21,5 +21,6 @@ parameters/looping = true
 
 [node name="SFX" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_281mq")
-volume_db = 5.635
+volume_db = -6.0
 autoplay = true
+panning_strength = 0.0
