@@ -7,7 +7,7 @@
 bg_color = Color(0.679038, 0.528196, 0.256885, 1)
 
 [node name="NumericUpDown" type="Control"]
-custom_minimum_size = Vector2(50, 156)
+custom_minimum_size = Vector2(100, 156)
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -24,25 +24,28 @@ offset_bottom = 40.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_mjxas")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
-custom_minimum_size = Vector2(50, 0)
+custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 theme_override_constants/separation = 8
 
 [node name="Up" type="Button" parent="PanelContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
-text = "^"
+theme_override_font_sizes/font_size = 32
+text = "▲"
 
 [node name="DigitTexture" type="TextureRect" parent="PanelContainer/VBoxContainer"]
 unique_name_in_owner = true
 self_modulate = Color(0.284659, 0.105826, 0.0271913, 1)
-custom_minimum_size = Vector2(40, 50)
+custom_minimum_size = Vector2(40, 140)
 layout_mode = 2
 texture = ExtResource("1_fibru")
 expand_mode = 4
 
 [node name="Down" type="Button" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
-text = "v"
+theme_override_font_sizes/font_size = 32
+text = "▼"
 
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Up" to="." method="_on_up_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Down" to="." method="_on_down_pressed"]
