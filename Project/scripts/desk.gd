@@ -30,7 +30,7 @@ func _on_back_button_pressed() -> void:
 	pass
 
 func zoom_to(_position) -> void:
-	$Camera2D.zoom_to(1.0, _position)
+	$Camera2D.zoom_to(0.8, _position)
 	%ZoomBackButton.visible = true
 	set_click_area_button_active(false)
 	pass
@@ -40,7 +40,7 @@ func zoom_back() -> void:
 	$MonthSwitchboard/Switchboard.reset()
 	$DaySwitchboard/Switchboard.reset()
 	set_click_area_button_active(true)
-	$Camera2D.zoom_to(0.5, Vector2(0, 0))
+	$Camera2D.zoom_to(0.4, Vector2(0, 0))
 	%ZoomBackButton.visible = false
 
 func set_click_area_button_active(flag):

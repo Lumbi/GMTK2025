@@ -5,8 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://cot4gmg4qs8lb" path="res://prefabs/time_input_control.tscn" id="2_ex12m"]
 [ext_resource type="Script" path="res://scripts/click_area_button.gd" id="2_i17aw"]
 [ext_resource type="PackedScene" uid="uid://beadrrthhy7nl" path="res://prefabs/postprocessing.tscn" id="2_sw5wi"]
-[ext_resource type="Texture2D" uid="uid://be42vnrc1khmf" path="res://textures/Desk_Illustration2_1_Empty.png" id="5_1cuu8"]
 [ext_resource type="PackedScene" uid="uid://cuwvo1as8oidn" path="res://prefabs/year_switchboard.tscn" id="5_i17aw"]
+[ext_resource type="Texture2D" uid="uid://8e4c0gqevkfe" path="res://textures/Background_downgradedv2.png" id="6_v81xl"]
 [ext_resource type="PackedScene" uid="uid://bsb0hmho24r76" path="res://prefabs/month_switchboard.tscn" id="7_50fcr"]
 [ext_resource type="Texture2D" uid="uid://omfaxu7koe61" path="res://textures/milo.jpg" id="7_v81xl"]
 [ext_resource type="PackedScene" uid="uid://bxo3obomatb5r" path="res://prefabs/day_switchboard.tscn" id="8_1cuu8"]
@@ -28,30 +28,30 @@ offset_bottom = -617.0
 
 [node name="MonthSwitchboardButton" type="Button" parent="CanvasLayer"]
 unique_name_in_owner = true
-offset_left = -771.0
-offset_top = -944.0
-offset_right = 262.0
-offset_bottom = -726.0
-scale = Vector2(2.08, 1.72)
+offset_left = -700.0
+offset_top = -951.0
+offset_right = 333.0
+offset_bottom = -733.0
+scale = Vector2(2.04, 2.2)
 flat = true
 script = ExtResource("2_i17aw")
 
 [node name="DaySwitchboardButton" type="Button" parent="CanvasLayer"]
 unique_name_in_owner = true
-offset_left = -1386.0
-offset_top = -922.0
-offset_right = -1140.0
-offset_bottom = 56.0
-scale = Vector2(2.32, 1.72)
+offset_left = -1423.0
+offset_top = -973.0
+offset_right = -1177.0
+offset_bottom = 5.0
+scale = Vector2(2.88, 1.8)
 flat = true
 script = ExtResource("2_i17aw")
 
 [node name="YearSwitchboardButton" type="Button" parent="CanvasLayer"]
 unique_name_in_owner = true
-offset_left = -768.0
-offset_top = -552.0
-offset_right = 234.0
-offset_bottom = -15.9999
+offset_left = -704.0
+offset_top = -377.0
+offset_right = 298.0
+offset_bottom = 159.0
 scale = Vector2(2.12, 2.16)
 flat = true
 script = ExtResource("2_i17aw")
@@ -78,7 +78,7 @@ offset_bottom = 63.0
 text = " BACK "
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(0.5, 0.5)
+zoom = Vector2(0.4, 0.4)
 script = ExtResource("2_0jnev")
 
 [node name="InputZoomTarget" type="Node2D" parent="."]
@@ -87,42 +87,42 @@ position = Vector2(1744, -288)
 [node name="DeskBg" type="Sprite2D" parent="."]
 position = Vector2(26, 21)
 scale = Vector2(0.9, 0.9)
-texture = ExtResource("5_1cuu8")
+texture = ExtResource("6_v81xl")
 
 [node name="Cats" type="Node2D" parent="DeskBg"]
 
 [node name="Sprite2D2" type="Sprite2D" parent="DeskBg/Cats"]
-position = Vector2(-1864.71, -316.214)
+position = Vector2(826.074, 366.686)
 rotation = 0.0479507
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("7_v81xl")
 
 [node name="Sprite2D" type="Sprite2D" parent="DeskBg/Cats"]
-position = Vector2(-2079.35, -440.784)
+position = Vector2(611.435, 242.116)
 rotation = -0.140531
 scale = Vector2(0.44, 0.44)
 texture = ExtResource("8_gyajy")
 
 [node name="YearSwitchboard" parent="." instance=ExtResource("5_i17aw")]
-position = Vector2(-487, -454)
+position = Vector2(-384, -340)
 
 [node name="YearZoomTarget" type="Node2D" parent="YearSwitchboard"]
 unique_name_in_owner = true
 position = Vector2(640, 215)
 
 [node name="MonthSwitchboard" parent="." instance=ExtResource("7_50fcr")]
-position = Vector2(-261, -939)
+position = Vector2(-381, -880)
 
 [node name="MonthZoomTarget" type="Node2D" parent="MonthSwitchboard"]
 unique_name_in_owner = true
 position = Vector2(610, 178)
 
 [node name="DaySwitchboard" parent="." instance=ExtResource("8_1cuu8")]
-position = Vector2(-2102, -629)
+position = Vector2(-2061, -775)
 
 [node name="DayZoomTarget" type="Node2D" parent="DaySwitchboard"]
 unique_name_in_owner = true
-position = Vector2(987, 296)
+position = Vector2(987, 475)
 
 [connection signal="pressed" from="CanvasLayer/MonthSwitchboardButton" to="." method="_on_month_switchboard_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/DaySwitchboardButton" to="." method="_on_day_switchboard_button_pressed"]
