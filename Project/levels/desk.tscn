@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://c0yrhpggtuifq"]
+[gd_scene load_steps=13 format=3 uid="uid://c0yrhpggtuifq"]
 
 [ext_resource type="Script" uid="uid://cc26jou0o3fdk" path="res://scripts/desk.gd" id="1_b51fv"]
 [ext_resource type="Script" uid="uid://c617b1gh5fxtl" path="res://scripts/camera_2d.gd" id="2_0jnev"]
@@ -11,6 +11,10 @@
 [ext_resource type="Texture2D" uid="uid://omfaxu7koe61" path="res://textures/milo.jpg" id="7_v81xl"]
 [ext_resource type="PackedScene" uid="uid://bxo3obomatb5r" path="res://prefabs/day_switchboard.tscn" id="8_1cuu8"]
 [ext_resource type="Texture2D" uid="uid://o2wmgtswj24h" path="res://textures/bella.jpg" id="8_gyajy"]
+
+[sub_resource type="Gradient" id="Gradient_v81xl"]
+offsets = PackedFloat32Array(0, 0.512635, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 0.873646, 1, 1, 1, 0)
 
 [node name="Desk" type="Node2D"]
 script = ExtResource("1_b51fv")
@@ -89,6 +93,42 @@ position = Vector2(611.435, 242.116)
 rotation = -0.140531
 scale = Vector2(0.44, 0.44)
 texture = ExtResource("8_gyajy")
+
+[node name="vfx_lamp_dust" type="CPUParticles2D" parent="DeskBg"]
+position = Vector2(-1730, 391.111)
+amount = 64
+lifetime = 5.0
+emission_shape = 1
+emission_sphere_radius = 128.0
+particle_flag_align_y = true
+spread = 180.0
+gravity = Vector2(0.24, 0.255)
+scale_amount_max = 7.17
+color_ramp = SubResource("Gradient_v81xl")
+
+[node name="vfx_lamp_dust2" type="CPUParticles2D" parent="DeskBg"]
+position = Vector2(-1690, 701.111)
+amount = 64
+lifetime = 5.0
+emission_shape = 1
+emission_sphere_radius = 128.0
+particle_flag_align_y = true
+spread = 180.0
+gravity = Vector2(0.24, 0.255)
+scale_amount_max = 7.17
+color_ramp = SubResource("Gradient_v81xl")
+
+[node name="vfx_lamp_dust3" type="CPUParticles2D" parent="DeskBg"]
+position = Vector2(-1680, 551.111)
+amount = 64
+lifetime = 5.0
+emission_shape = 1
+emission_sphere_radius = 128.0
+particle_flag_align_y = true
+spread = 180.0
+gravity = Vector2(0.24, 0.255)
+scale_amount_max = 7.17
+color_ramp = SubResource("Gradient_v81xl")
 
 [node name="YearSwitchboard" parent="." instance=ExtResource("5_i17aw")]
 position = Vector2(-384, -340)
