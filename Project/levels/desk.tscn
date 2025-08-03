@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://c0yrhpggtuifq"]
+[gd_scene load_steps=18 format=3 uid="uid://c0yrhpggtuifq"]
 
 [ext_resource type="Script" uid="uid://cc26jou0o3fdk" path="res://scripts/desk.gd" id="1_b51fv"]
 [ext_resource type="Script" uid="uid://c617b1gh5fxtl" path="res://scripts/camera_2d.gd" id="2_0jnev"]
@@ -9,9 +9,12 @@
 [ext_resource type="Texture2D" uid="uid://c7tgjduuned07" path="res://textures/Backgound_Operator.png" id="5_gyajy"]
 [ext_resource type="PackedScene" uid="uid://cuwvo1as8oidn" path="res://prefabs/year_switchboard.tscn" id="5_i17aw"]
 [ext_resource type="PackedScene" uid="uid://bsb0hmho24r76" path="res://prefabs/month_switchboard.tscn" id="7_50fcr"]
+[ext_resource type="Texture2D" uid="uid://c2264l827det3" path="res://textures/alphonse.jpg" id="7_mxjqj"]
 [ext_resource type="Texture2D" uid="uid://omfaxu7koe61" path="res://textures/milo.jpg" id="7_v81xl"]
 [ext_resource type="PackedScene" uid="uid://bxo3obomatb5r" path="res://prefabs/day_switchboard.tscn" id="8_1cuu8"]
 [ext_resource type="Texture2D" uid="uid://o2wmgtswj24h" path="res://textures/bella.jpg" id="8_gyajy"]
+[ext_resource type="Texture2D" uid="uid://cv48h6pucmyw" path="res://textures/aidencat.jpg" id="10_6pooe"]
+[ext_resource type="Texture2D" uid="uid://v8tw8kjfs1ik" path="res://textures/Dinoh.png" id="11_2iqhm"]
 
 [sub_resource type="Curve" id="Curve_mxjqj"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.520635, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -98,17 +101,35 @@ texture = ExtResource("5_gyajy")
 
 [node name="Cats" type="Node2D" parent="DeskBg"]
 
+[node name="Sprite2D3" type="Sprite2D" parent="DeskBg/Cats"]
+position = Vector2(1036.67, 190)
+rotation = 0.183973
+scale = Vector2(0.599997, 0.599997)
+texture = ExtResource("7_mxjqj")
+
 [node name="Sprite2D2" type="Sprite2D" parent="DeskBg/Cats"]
-position = Vector2(826.074, 366.686)
+position = Vector2(1366.67, 202.222)
 rotation = 0.0479507
-scale = Vector2(0.6, 0.6)
+scale = Vector2(0.513342, 0.513342)
 texture = ExtResource("7_v81xl")
 
 [node name="Sprite2D" type="Sprite2D" parent="DeskBg/Cats"]
-position = Vector2(611.435, 242.116)
-rotation = -0.140531
+position = Vector2(850, 160)
+rotation = -0.104499
 scale = Vector2(0.44, 0.44)
 texture = ExtResource("8_gyajy")
+
+[node name="Sprite2D4" type="Sprite2D" parent="DeskBg/Cats"]
+position = Vector2(1186.67, 385.556)
+rotation = 0.457813
+scale = Vector2(0.488686, 0.488686)
+texture = ExtResource("10_6pooe")
+
+[node name="Sprite2D5" type="Sprite2D" parent="DeskBg/Cats"]
+position = Vector2(924.444, 400)
+rotation = -0.242951
+scale = Vector2(0.595749, 0.595749)
+texture = ExtResource("11_2iqhm")
 
 [node name="vfx_lamp_dust" type="CPUParticles2D" parent="DeskBg"]
 position = Vector2(-1730, 391.111)
