@@ -3,11 +3,11 @@ extends Node
 var sfx_dictionary: Dictionary = {}
 
 var sfx_mix: Dictionary[String, float] = {
-	"2025_GMTL_sfx_in" : -3,
-	"2025_GMTL_sfx_out" : -3,
-	"2025_GMTL_sfx_date_panel" : 3,
-	"TvOn_crt" : 3,
-	"fail_sfx" : 3,
+	"2025_GMTL_sfx_in" : -6,
+	"2025_GMTL_sfx_out" : -6,
+	"2025_GMTL_sfx_date_panel" : -3,
+	"TvOn_crt" : -6,
+	"fail_sfx" : 0,
 }
 
 func get_audio_manager():
@@ -88,3 +88,6 @@ func set_dialog_is_playing(is_playing : bool) -> void:
 
 func set_zoom_on_board(zoomed_in : bool) -> void:
 	get_audio_manager().OnCamearaZoomed(zoomed_in)
+
+func game_win():
+	get_audio_manager().play_win()

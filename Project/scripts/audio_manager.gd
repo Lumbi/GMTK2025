@@ -7,6 +7,7 @@ var  is_ducking : bool = false
 @export var music_duck_db : int  = 12
 @export var amb_duck_db : int  = 9
 
+@export var win_music: Resource
 func _ready():
 	amb = $Ambince
 	music = $Music
@@ -34,3 +35,8 @@ func OnCamearaZoomed(zoomed_in : bool) -> void:
 		amb.play()
 	else:
 		amb.stop()
+
+func play_win() -> void:
+	music.stop()
+	music.stream = win_music
+	music.play()
