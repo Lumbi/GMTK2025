@@ -10,7 +10,6 @@
 [ext_resource type="Texture2D" uid="uid://vuutb0ecl6xx" path="res://textures/shape_square.png" id="6_efm0y"]
 
 [node name="ShapeDial" type="Node2D"]
-scale = Vector2(0.7, 0.7)
 script = ExtResource("1_st04t")
 
 [node name="Screen" type="Sprite2D" parent="."]
@@ -20,7 +19,7 @@ scale = Vector2(1.4, 1.4)
 texture = ExtResource("6_efm0y")
 
 [node name="RealScreen" type="Sprite2D" parent="."]
-scale = Vector2(0.7, 0.7)
+scale = Vector2(0.82, 0.82)
 texture = ExtResource("2_vdbu4")
 
 [node name="ShapeCircle" type="Sprite2D" parent="."]
