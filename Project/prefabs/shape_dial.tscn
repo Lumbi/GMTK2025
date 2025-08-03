@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://ttq13tvt5bes"]
+[gd_scene load_steps=9 format=3 uid="uid://ttq13tvt5bes"]
 
 [ext_resource type="Texture2D" uid="uid://k5gspay48w4f" path="res://textures/shape_circle.png" id="1_1fvd2"]
 [ext_resource type="Script" uid="uid://vimxyeofv22w" path="res://scripts/shape_dial.gd" id="1_st04t"]
 [ext_resource type="Texture2D" uid="uid://d356dfaj1vmfk" path="res://textures/shape_cone.png" id="2_st04t"]
+[ext_resource type="Texture2D" uid="uid://285in5cei6qm" path="res://textures/Screen.png" id="2_vdbu4"]
 [ext_resource type="Texture2D" uid="uid://cc3uf1so8lbd2" path="res://textures/shape_cross.png" id="3_vdbu4"]
 [ext_resource type="Texture2D" uid="uid://de7eblmuvbn8b" path="res://textures/shape_diamond.png" id="4_1jnwg"]
 [ext_resource type="Texture2D" uid="uid://dqm42nomq2g11" path="res://textures/shape_funnel.png" id="5_ekegu"]
@@ -11,6 +12,16 @@
 [node name="ShapeDial" type="Node2D"]
 scale = Vector2(0.7, 0.7)
 script = ExtResource("1_st04t")
+
+[node name="Screen" type="Sprite2D" parent="."]
+visible = false
+modulate = Color(0, 0, 0, 1)
+scale = Vector2(1.4, 1.4)
+texture = ExtResource("6_efm0y")
+
+[node name="RealScreen" type="Sprite2D" parent="."]
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("2_vdbu4")
 
 [node name="ShapeCircle" type="Sprite2D" parent="."]
 visible = false
@@ -45,8 +56,3 @@ theme_override_font_sizes/font_size = 58
 text = "DAY"
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="Screen" type="Sprite2D" parent="."]
-modulate = Color(0, 0, 0, 1)
-scale = Vector2(1.4, 1.4)
-texture = ExtResource("6_efm0y")
