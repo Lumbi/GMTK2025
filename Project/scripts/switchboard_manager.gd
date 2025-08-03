@@ -96,7 +96,7 @@ func _process(_delta: float) -> void:
 	if current_wire:
 		var mouse_pos = get_global_mouse_position()
 		var delta = mouse_pos - current_wire.global_position
-		const MAX_WIRE_LENGTH = 700
+		const MAX_WIRE_LENGTH = 850	
 		delta = delta.limit_length(MAX_WIRE_LENGTH)
 		current_wire.move_end_to(current_wire.global_position + delta)
 

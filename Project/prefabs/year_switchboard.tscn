@@ -1,9 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://cuwvo1as8oidn"]
+[gd_scene load_steps=4 format=3 uid="uid://cuwvo1as8oidn"]
 
 [ext_resource type="PackedScene" uid="uid://bhubpcvphim6a" path="res://levels/switchboard.tscn" id="1_5it14"]
 [ext_resource type="PackedScene" uid="uid://beryfgbw458pm" path="res://prefabs/SwitchboardSocket.tscn" id="2_n64xj"]
+[ext_resource type="Texture2D" uid="uid://bytkcfxq0pgqa" path="res://textures/plug.png" id="3_etrcr"]
 
 [node name="YearSwitchboard" type="Node2D"]
+
+[node name="FirstWireSpawnPoint" type="Node2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(-147, 630)
+
+[node name="Sprite2D" type="Sprite2D" parent="FirstWireSpawnPoint"]
+scale = Vector2(0.07, 0.07)
+texture = ExtResource("3_etrcr")
 
 [node name="Switchboard" parent="." instance=ExtResource("1_5it14")]
 shapeStations_filename_to_key = Dictionary[String, String]({
@@ -42,7 +51,3 @@ shape = 4
 [node name="SwitchboardSocket6" parent="Switchboard/SwitchboardSockets" instance=ExtResource("2_n64xj")]
 position = Vector2(653.846, 368.462)
 shape = 3
-
-[node name="FirstWireSpawnPoint" type="Node2D" parent="Switchboard"]
-unique_name_in_owner = true
-position = Vector2(187, 105)
