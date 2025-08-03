@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://b4w65f8jynbbx"]
 
 [ext_resource type="Script" uid="uid://4uecrbl36ybk" path="res://scripts/multi_digit_input.gd" id="1_0kj43"]
-[ext_resource type="PackedScene" path="res://prefabs/digit_input.tscn" id="1_tj0wc"]
+[ext_resource type="PackedScene" uid="uid://cdlwyfc1ftd6v" path="res://prefabs/digit_input.tscn" id="1_tj0wc"]
 
 [node name="4DigitInput" type="Control"]
 custom_minimum_size = Vector2(212, 156)

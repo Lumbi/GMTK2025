@@ -71,4 +71,3 @@ func mark_as_max_connection_unreached():
 func mark_as_inactive():
 		input_socket_node.texture = output_socket_not_connected
 		output_socket_node.texture = output_socket_not_connected
-
