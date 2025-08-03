@@ -1,13 +1,13 @@
 [gd_scene load_steps=9 format=3 uid="uid://ttq13tvt5bes"]
 
-[ext_resource type="Texture2D" uid="uid://k5gspay48w4f" path="res://textures/shape_circle.png" id="1_1fvd2"]
+[ext_resource type="Texture2D" uid="uid://k3ukplu4ahpe" path="res://textures/shapes/shape_circle.png" id="1_1fvd2"]
 [ext_resource type="Script" uid="uid://vimxyeofv22w" path="res://scripts/shape_dial.gd" id="1_st04t"]
-[ext_resource type="Texture2D" uid="uid://d356dfaj1vmfk" path="res://textures/shape_cone.png" id="2_st04t"]
+[ext_resource type="Texture2D" uid="uid://dxldqvm4yjfbn" path="res://textures/shapes/shape_cone.png" id="2_st04t"]
 [ext_resource type="Texture2D" uid="uid://285in5cei6qm" path="res://textures/Screen.png" id="2_vdbu4"]
-[ext_resource type="Texture2D" uid="uid://cc3uf1so8lbd2" path="res://textures/shape_cross.png" id="3_vdbu4"]
-[ext_resource type="Texture2D" uid="uid://de7eblmuvbn8b" path="res://textures/shape_diamond.png" id="4_1jnwg"]
-[ext_resource type="Texture2D" uid="uid://dqm42nomq2g11" path="res://textures/shape_funnel.png" id="5_ekegu"]
-[ext_resource type="Texture2D" uid="uid://vuutb0ecl6xx" path="res://textures/shape_square.png" id="6_efm0y"]
+[ext_resource type="Texture2D" uid="uid://bd6toncvpo5gj" path="res://textures/shapes/shape_cross.png" id="3_vdbu4"]
+[ext_resource type="Texture2D" uid="uid://x2bujg8erje3" path="res://textures/shapes/shape_diamond.png" id="4_1jnwg"]
+[ext_resource type="Texture2D" uid="uid://bwhoeuubhnjqb" path="res://textures/shapes/shape_funnel.png" id="5_ekegu"]
+[ext_resource type="Texture2D" uid="uid://by0wado2g4xt6" path="res://textures/shapes/shape_square.png" id="6_efm0y"]
 
 [node name="ShapeDial" type="Node2D"]
 script = ExtResource("1_st04t")
