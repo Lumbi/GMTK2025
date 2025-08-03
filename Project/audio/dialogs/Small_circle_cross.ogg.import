@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://5evcj2iw75ef"
-path="res://.godot/imported/Small_circle_cross.ogg-5f186d9fbe1644325532b888f491dcf3.oggvorbisstr"
+path="res://.godot/imported/small_circle_cross.ogg-35d7c114b041c787768ade587013fc27.oggvorbisstr"
 
 [deps]
 
-source_file="res://audio/dialogs/Small_circle_cross.ogg"
-dest_files=["res://.godot/imported/Small_circle_cross.ogg-5f186d9fbe1644325532b888f491dcf3.oggvorbisstr"]
+source_file="res://audio/dialogs/small_circle_cross.ogg"
+dest_files=["res://.godot/imported/small_circle_cross.ogg-35d7c114b041c787768ade587013fc27.oggvorbisstr"]
 
 [params]
 
